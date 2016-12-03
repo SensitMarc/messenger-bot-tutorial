@@ -26,6 +26,11 @@ app.get('/webhook/', function (req, res) {
 	res.send('Error, wrong token')
 })
 
+// spin spin sugar
+app.listen(app.get('port'), function() {
+	console.log('running on port', app.get('port'))
+})
+
 // to post data
 /*
 app.post('/webhook/', function (req, res) {
@@ -134,8 +139,3 @@ function sendGenericMessage(sender) {
 		}
 	})
 }
-
-// spin spin sugar
-app.listen(app.get('port'), function() {
-	console.log('running on port', app.get('port'))
-})
