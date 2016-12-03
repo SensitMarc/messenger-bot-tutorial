@@ -27,6 +27,7 @@ app.get('/webhook/', function (req, res) {
 })
 
 // to post data
+/*
 app.post('/webhook/', function (req, res) {
     messaging_events = req.body.entry[0].messaging
     for (i = 0; i < messaging_events.length; i++) {
@@ -40,6 +41,7 @@ app.post('/webhook/', function (req, res) {
     res.sendStatus(200)
 })
 
+*/
 
 // to post data
 app.post('/webhook/', function (req, res) {
