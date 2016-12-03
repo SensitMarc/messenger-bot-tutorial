@@ -49,6 +49,7 @@ app.post('/webhook/', function (req, res) {
  const token = process.env.FB_PAGE_ACCESS_TOKEN
 //const token = "FB_PAGE_ACCESS_TOKEN"
 
+ /*
 function sendTextMessage(sender, text) {
 	let messageData = { text:text }
 	
@@ -68,6 +69,7 @@ function sendTextMessage(sender, text) {
 		}
 	})
 }
+*/
 
 function sendGenericMessage(sender) {
 	let messageData = {
