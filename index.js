@@ -84,7 +84,7 @@ function sendGenericMessage(sender) {
 					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
 					"buttons": [{
 						"type": "web_url",
-						"url": "https://www.messenger.com",
+						"url": "http://www.sensee.ca",
 						"title": "web url"
 					}, {
 						"type": "postback",
