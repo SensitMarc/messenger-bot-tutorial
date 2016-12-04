@@ -1,4 +1,3 @@
-'use strict'
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -28,12 +27,12 @@ app.get('/webhook/', function (req, res) {
 
 // to post data
 app.post('/webhook/', function (req, res) {
-    let messaging_events = req.body.entry[0].messaging
-    for (let i = 0; i < messaging_events.length; i++) {
-      let event = req.body.entry[0].messaging[i]
-      let sender = event.sender.id
+    messaging_events = req.body.entry[0].messaging
+    for (i = 0; i < messaging_events.length; i++) {
+       event = req.body.entry[0].messaging[i]
+      sender = event.sender.id
       if (event.message && event.message.text) {
-        let text = event.message.text
+         text = event.message.text
         if (text === 'Generic') {
             sendGenericMessage(sender)
             continue
@@ -41,7 +40,7 @@ app.post('/webhook/', function (req, res) {
         sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
       }
       if (event.postback) {
-        let text = JSON.stringify(event.postback)
+        text = JSON.stringify(event.postback)
         sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
         continue
       }
@@ -54,7 +53,7 @@ app.post('/webhook/', function (req, res) {
 //const token = "FB_PAGE_ACCESS_TOKEN"
 
 function sendTextMessage(sender, text) {
-	let messageData = { text:text }
+	messageData = { text:text }
 	
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -74,7 +73,7 @@ function sendTextMessage(sender, text) {
 }
 
 function sendGenericMessage(sender) {
-	let messageData = {
+	 messageData = {
 		"attachment": {
 			"type": "template",
 			"payload": {
