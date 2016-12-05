@@ -81,7 +81,7 @@ function sendGenericMessage(sender) {
 				"elements": [{
 					"title": "First card",
 					"subtitle": "Element #1 of an hscroll",
-					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+					"web_url": "http://www.sensee.ca",
 					"buttons": [{
 						"type": "web_url",
 						"url": "http://www.sensee.ca",
