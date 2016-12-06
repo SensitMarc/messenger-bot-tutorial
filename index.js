@@ -72,57 +72,6 @@ function sendTextMessage(sender, text) {
 	})
 }
 
-function processLocation(sender, coords) {
-    httpRequest({
-        url: 'api.keen.io/3.0/projects/563a13c896773d4a75c3bf93/queries/count_unique?api_key=9d45d36b3d3040533eb3a9f2e8bcc9e317d6b4e7e2cbb413ce959e7c0f8b926a7b82523fc0acd774ef024a0f4bddcc2bd8e992e2f61d9aed7b7f09bcb63bc0a1ebee2e0ebd0e2792dba3dc4ae1ae9c11c19e54753574a726dea4eec16e463aa06196d6876d167a9d668f236f25a8857d&event_collection=kWhr&target_property=kWhr&timezone=UTC&timeframe=this_1_days&filters=%5B%5D'
-        method: 'GET'
-    }, function(error, response, body) {
-        var station,
-            messageData,
-            directionsUrl;
-
-        if (! error && response.statusCode === 200) {
-            station = JSON.parse(body);
-            directionsUrl = 'http://bing.com/maps/default.aspx?rtop=0~~&rtp=pos.' + coords.lat + '_' + coords.long + '~pos.' + station.gtfs_latitude + '_' + station.gtfs_longitude + '&mode=';
-
-            // Walkable if 2 miles or under
-            directionsUrl += (station.distance <= 2 ? 'W' : 'D');
-
-            messageData = {
-                'attachment': {
-                    'type': 'template',
-                    'payload': {
-                        'template_type': 'generic',
-                        'elements': [{
-                            'title': 'Closest BART: ' + station,
-                            'subtitle': station.distance.toFixed(2) + ' miles',
-                            'image_url': 'http://staticmap.openstreetmap.de/staticmap.php?center=' + station.gtfs_latitude + ',' + station.gtfs_longitude + '&zoom=18&size=640x480&maptype=osmarenderer&markers=' + station.gtfs_latitude + ',' + station.gtfs_longitude,
-                            'buttons': [{
-                                'type': 'web_url',
-                                'url': 'http://www.bart.gov/stations/' + station.abbr.toLowerCase(),
-                                'title': 'Station Information'
-                            }, {
-                                'type': 'postback',
-                                'title': 'Departures',
-                                'payload': 'departures ' + station.abbr,
-                            }, {
-                                'type': 'web_url',
-                                'url': directionsUrl,
-                                'title': 'Directions'
-                            }]
-                        }]
-                    }
-                }
-            };
-
-            sendGenericMessage(sender, messageData);
-        } else {
-            console.log(error);
-            sendTextMessage(sender, 'Sorry I was unable to determine your closest BART station.');
-        }
-    });   
-}
-
 function sendGenericMessage(sender) {
 	 messageData = {
 		"attachment": {
