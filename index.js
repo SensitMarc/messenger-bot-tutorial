@@ -97,7 +97,7 @@ function processGetReal(sender) {
         }
     });   
 }
-*/
+
 
 function sendGetReal(sender){
 	request({
@@ -116,6 +116,7 @@ function sendGetReal(sender){
 		}
 	})		
 }
+*/
 
 function sendGenericMessage(sender) {
 	 messageData = {
