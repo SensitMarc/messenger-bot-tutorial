@@ -42,6 +42,10 @@ app.post('/webhook/', function (req, res) {
 		getReal(sender)
 		      continue
 	      }
+		      if (text === 'power') {
+		getReal(sender)
+		      continue
+	      }      
 	      
         sendTextMessage(sender, text.substring(0, 200))
       }
