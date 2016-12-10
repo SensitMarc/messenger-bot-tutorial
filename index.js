@@ -38,7 +38,7 @@ app.post('/webhook/', function (req, res) {
             sendGenericMessage(sender)
             continue
         }
-	      if (text === 'getreal') {
+	      if (text === 'what is my power consumption?') {
 		getReal(sender)
 		      continue
 	      }
