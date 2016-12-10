@@ -1,4 +1,3 @@
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
@@ -40,7 +39,7 @@ app.post('/webhook/', function (req, res) {
             continue
         }
 	      if (text === 'getreal') {
-		processGetReal(sender)
+		getReal (sender)
 		      continue
 	      }
 	      
@@ -98,7 +97,6 @@ function processGetReal(sender) {
     });   
 }
 
-
 function sendGetReal(sender, messageData){
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -116,9 +114,8 @@ function sendGetReal(sender, messageData){
 		}
 	})		
 }
-*/
 
-function sendGenericMessage(sender, messageData) {
+function sendGenericMessage(sender) {
 	 messageData = {
 		"attachment": {
 			"type": "template",
@@ -175,14 +172,11 @@ function processLocation(sender, coords) {
         var station,
             messageData,
             directionsUrl;
-
         if (! error && response.statusCode === 200) {
             station = JSON.parse(body);
             directionsUrl = 'http://bing.com/maps/default.aspx?rtop=0~~&rtp=pos.' + coords.lat + '_' + coords.long + '~pos.' + station.gtfs_latitude + '_' + station.gtfs_longitude + '&mode=';
-
             // Walkable if 2 miles or under
             directionsUrl += (station.distance <= 2 ? 'W' : 'D');
-
             messageData = {
                 'attachment': {
                     'type': 'template',
@@ -209,7 +203,6 @@ function processLocation(sender, coords) {
                     }
                 }
             };
-
             sendGenericMessage(sender, messageData);
         } else {
             console.log(error);
