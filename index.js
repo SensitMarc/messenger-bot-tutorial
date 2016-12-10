@@ -37,6 +37,11 @@ app.post('/webhook/', function (req, res) {
             sendGenericMessage(sender)
             continue
         }
+	      if (text === 'getreal') {
+		getReal (sender)
+		      continue
+	      }
+	      
         sendTextMessage(sender, text.substring(0, 200))
       }
       if (event.postback) {
@@ -55,6 +60,27 @@ app.post('/webhook/', function (req, res) {
 function sendTextMessage(sender, text) {
 	messageData = { text:text }
 	
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}
+
+function getReal(sender){	
+  messageData = {
+  	"text":"hello, world!"
+  }
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
 		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN},
