@@ -89,7 +89,7 @@ function processGetReal(sender) {
             
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-            messageData = {"text": maya};
+            messageData = {"text": maya.result};
             sendGetReal(sender, messageData);
         } else {
             console.log(error);
