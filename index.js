@@ -80,19 +80,11 @@ function sendTextMessage(sender, text) {
 }
 
 function getReal(sender){
+	var maya = "owl";
 	
-	httpRequest ({
-        url: 'https://api.keen.io/3.0/projects/563a13c896773d4a75c3bf93/queries/count_unique?api_key=9d45d36b3d3040533eb3a9f2e8bcc9e317d6b4e7e2cbb413ce959e7c0f8b926a7b82523fc0acd774ef024a0f4bddcc2bd8e992e2f61d9aed7b7f09bcb63bc0a1ebee2e0ebd0e2792dba3dc4ae1ae9c11c19e54753574a726dea4eec16e463aa06196d6876d167a9d668f236f25a8857d&event_collection=kWhr&target_property=kWhr&timezone=UTC&timeframe=this_1_days&filters=%5B%5D',
-        method: 'GET'
-    }, function(error, response, body) {
-        var maya,
-	   //if (! error && response.statusCode === 200) {
-            maya = JSON.parse(body);
-	},
-		     
 	messageData = {
-  	"text": maya.result
-	});
+  	"text": maya
+	};
 	
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
