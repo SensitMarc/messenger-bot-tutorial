@@ -93,7 +93,7 @@ if (! error && response.statusCode === 200) {
 	//var maya = "owl";
 	
 	messageData = {
-  	"text": maya.result
+  	"text": "result"
 	};
 	
 	request({
