@@ -39,7 +39,7 @@ app.post('/webhook/', function (req, res) {
             continue
         }
 	      if (text === 'getreal') {
-		getReal (sender)
+		getReal(sender)
 		      continue
 	      }
 	      
@@ -84,7 +84,7 @@ function getReal(sender){
 	var maya = "owl";
 	
 	messageData = {
-  	"text": "result"
+  	"text": maya
 	};
 	
 	request({
