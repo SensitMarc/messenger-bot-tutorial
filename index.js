@@ -86,13 +86,12 @@ function getReal(sender){
     }, function(error, response, body) {
         var maya;
 		
-	   if (! error && response.statusCode === 200) {
+	//   if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
 	
 	messageData = {
   	"text": maya
-  	}
-	   };
+  	};
 		
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
