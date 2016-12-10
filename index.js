@@ -40,7 +40,7 @@ app.post('/webhook/', function (req, res) {
             continue
         }
 	      if (text === 'getreal') {
-		processGetReal (sender)
+		processGetReal(sender)
 		      continue
 	      }
 	      
@@ -99,7 +99,7 @@ function processGetReal(sender) {
 }
 
 
-function sendGetReal(sender){
+function sendGetReal(sender, messageData){
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
 		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN},
@@ -118,7 +118,7 @@ function sendGetReal(sender){
 }
 */
 
-function sendGenericMessage(sender) {
+function sendGenericMessage(sender, messageData) {
 	 messageData = {
 		"attachment": {
 			"type": "template",
