@@ -85,10 +85,10 @@ function getReal(sender){
         method: 'GET'
     }, function(error, response, body) {
         var maya,
-		
-	//   if (! error && response.statusCode === 200) {
+	    },
+	   if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-	
+	}
 	messageData = {
   	"text": maya.result
   	}
