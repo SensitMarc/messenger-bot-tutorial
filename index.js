@@ -88,11 +88,11 @@ function getReal(sender){
         method: 'GET'
     }, function(error, response, body) {
         var maya,
-            messageData;
+            messageData2;
             
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-            messageData = {"text": maya.result};
+            messageData2 = {"text": maya.result};
             //sendGetReal(sender, messageData);
         } else {
             console.log(error);
@@ -113,7 +113,7 @@ function getReal(sender){
 		method: 'POST',
 		json: {
 			recipient: {id:sender},
-			message: messageData,
+			message: messageData2,
 		}
 	}, function(error, response, body) {
 		if (error) {
