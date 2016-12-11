@@ -84,7 +84,7 @@ let	messageData = { text:text }
 
 function getReal(sender){
 	httpRequest({
-        url:'keen_api',
+        url:'https://api.keen.io/3.0/projects/563a13c896773d4a75c3bf93/queries/count_unique?api_key=keen_api&event_collection=kWhr&target_property=kWhr&timezone=UTC&timeframe=this_1_days&filters=%5B%5D',
         method: 'GET'
     }, function(error, response, body) {
         var maya;
