@@ -59,7 +59,7 @@ app.post('/webhook/', function (req, res) {
   })
 
 // recommended to inject access tokens as environmental variables, e.g.
- const token = process.env.FB_PAGE_ACCESS_TOKEN
+ const token = process.env.FB_PAGE_ACCESS_TOKEN_SENSEE
 //const token = "FB_PAGE_ACCESS_TOKEN"
 
 function sendTextMessage(sender, text) {
@@ -67,7 +67,7 @@ let	messageData = { text:text }
 	
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
-		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN},
+		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
 		method: 'POST',
 		json: {
 			recipient: {id:sender},
@@ -110,7 +110,7 @@ httpRequest({
 	
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
-		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN},
+		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
 		method: 'POST',
 		json: {
 			recipient: {id:sender},
@@ -159,7 +159,7 @@ function sendGenericMessage(sender) {
 	}
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
-		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN},
+		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
 		method: 'POST',
 		json: {
 			recipient: {id:sender},
