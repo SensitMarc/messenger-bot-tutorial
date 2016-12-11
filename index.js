@@ -132,13 +132,13 @@ function sendGenericMessage(sender) {
 			"payload": {
 				"template_type": "generic",
 				"elements": [{
-					"title": "First card",
-					"subtitle": "Element #1 of an hscroll",
-					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+					"title": "First tip",
+					"subtitle": "how to save money",
+					"image_url": "https://www.dropbox.com/s/fw0mmcf6rozzkri/20140816_172819.jpg?dl=0",
 					"buttons": [{
 						 "type": "web_url",
-                        			"url": "https://www.messenger.com",
-                       				 "title": "web url"
+                        			"url": "http://www.sensee.ca",
+                       				 "title": "sensee"
 					}, {
 						"type": "postback",
 						"title": "Postback",
