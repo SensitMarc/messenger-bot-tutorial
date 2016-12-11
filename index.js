@@ -28,29 +28,29 @@ app.get('/webhook/', function (req, res) {
 
 // to post data
 app.post('/webhook/', function (req, res) {
-let    messaging_events = req.body.entry[0].messaging
+    messaging_events = req.body.entry[0].messaging
     for (i = 0; i < messaging_events.length; i++) {
-   let    event = req.body.entry[0].messaging[i]
+       event = req.body.entry[0].messaging[i]
       sender = event.sender.id
       if (event.message && event.message.text) {
-     let    text = event.message.text
+         text = event.message.text
         if (text === 'Generic') {
-       let     sendGenericMessage(sender)
+           sendGenericMessage(sender)
             continue
         }
 	      if (text === 'what is my power consumption?') {
-	let	getReal(sender)
+		getReal(sender)
 		    continue 
 	      }
 		      if (text === 'power') {
-	let	getReal(sender)
+		getReal(sender)
 		     continue 
 	      }      
 	      
         sendTextMessage(sender, text.substring(0, 200))
       }
       if (event.postback) {
-      let  text = JSON.stringify(event.postback)
+        text = JSON.stringify(event.postback)
         sendTextMessage(sender, "Postback received: "+ text.substring(0, 200), token)
         continue
       }
@@ -91,12 +91,12 @@ function getReal(sender){
             //messageData;
             
         if (! error && response.statusCode === 200) {
-         let   maya = JSON.parse(body);
-          let  messageData = {"text": maya.result};
+            maya = JSON.parse(body);
+            messageData = {"text": maya.result};
             //sendGetReal(sender, messageData);
         } else {
             console.log(error);
-        let    sendTextMessage(sender, 'Sorry I was unable to determine your closest BART station.');
+           sendTextMessage(sender, 'Sorry I was unable to determine your closest BART station.');
         }
     });
 	/*
