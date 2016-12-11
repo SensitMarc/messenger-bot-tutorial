@@ -28,29 +28,29 @@ app.get('/webhook/', function (req, res) {
 
 // to post data
 app.post('/webhook/', function (req, res) {
-    messaging_events = req.body.entry[0].messaging
+let    messaging_events = req.body.entry[0].messaging
     for (i = 0; i < messaging_events.length; i++) {
-       event = req.body.entry[0].messaging[i]
+   let    event = req.body.entry[0].messaging[i]
       sender = event.sender.id
       if (event.message && event.message.text) {
-         text = event.message.text
+     let    text = event.message.text
         if (text === 'Generic') {
-            sendGenericMessage(sender)
-            
+       let     sendGenericMessage(sender)
+            continue
         }
 	      if (text === 'what is my power consumption?') {
-		getReal(sender)
-		     
+	let	getReal(sender)
+		    continue 
 	      }
 		      if (text === 'power') {
-		getReal(sender)
-		      
+	let	getReal(sender)
+		     continue 
 	      }      
 	      
         sendTextMessage(sender, text.substring(0, 200))
       }
       if (event.postback) {
-        text = JSON.stringify(event.postback)
+      let  text = JSON.stringify(event.postback)
         sendTextMessage(sender, "Postback received: "+ text.substring(0, 200), token)
         continue
       }
@@ -63,7 +63,7 @@ app.post('/webhook/', function (req, res) {
 //const token = "FB_PAGE_ACCESS_TOKEN"
 
 function sendTextMessage(sender, text) {
-	messageData = { text:text }
+let	messageData = { text:text }
 	
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -91,12 +91,12 @@ function getReal(sender){
             //messageData;
             
         if (! error && response.statusCode === 200) {
-            maya = JSON.parse(body);
-            messageData = {"text": maya.result};
+         let   maya = JSON.parse(body);
+          let  messageData = {"text": maya.result};
             //sendGetReal(sender, messageData);
         } else {
             console.log(error);
-            sendTextMessage(sender, 'Sorry I was unable to determine your closest BART station.');
+        let    sendTextMessage(sender, 'Sorry I was unable to determine your closest BART station.');
         }
     });
 	/*
@@ -125,7 +125,7 @@ function getReal(sender){
 }
 
 function sendGenericMessage(sender) {
-	 messageData = {
+	let messageData = {
 		"attachment": {
 			"type": "template",
 			"payload": {
