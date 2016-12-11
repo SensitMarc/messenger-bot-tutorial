@@ -134,7 +134,7 @@ function sendGenericMessage(sender) {
 				"elements": [{
 					"title": "First tip",
 					"subtitle": "how to save money",
-					"image_url": "https://www.dropbox.com/s/fw0mmcf6rozzkri/20140816_172819.jpg?dl=0",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
 					"buttons": [{
 						 "type": "web_url",
                         			"url": "http://www.sensee.ca",
