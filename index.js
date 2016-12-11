@@ -133,12 +133,12 @@ function sendGenericMessage(sender) {
 				"template_type": "generic",
 				"elements": [{
 					"title": "First tip",
-					"subtitle": "how to save money",
+					"subtitle": "check this out",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
 					"buttons": [{
 						 "type": "web_url",
-                        			"url": "http://www.sensee.ca",
-                       				 "title": "sensee.ca"
+                        			"url": "http://sensee.ca/prototypes/index.html",
+                       				 "title": "my house"
 					}, {
 						"type": "postback",
 						"title": "Postback",
