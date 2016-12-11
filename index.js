@@ -36,15 +36,15 @@ app.post('/webhook/', function (req, res) {
          text = event.message.text
         if (text === 'Generic') {
             sendGenericMessage(sender)
-            continue
+            
         }
 	      if (text === 'what is my power consumption?') {
 		getReal(sender)
-		      continue
+		     
 	      }
 		      if (text === 'power') {
 		getReal(sender)
-		      continue
+		      
 	      }      
 	      
         sendTextMessage(sender, text.substring(0, 200))
