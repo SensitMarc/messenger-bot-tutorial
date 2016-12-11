@@ -138,7 +138,7 @@ function sendGenericMessage(sender) {
 					"buttons": [{
 						 "type": "web_url",
                         			"url": "http://www.sensee.ca",
-                       				 "title": "sensee"
+                       				 "title": "sensee.ca"
 					}, {
 						"type": "postback",
 						"title": "Postback",
