@@ -84,7 +84,7 @@ let	messageData = { text:text }
 
 function getReal(sender){
 	httpRequest({
-        url:keen_api,
+        url:'keen_api',
         method: 'GET'
     }, function(error, response, body) {
         var maya;
