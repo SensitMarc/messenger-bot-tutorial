@@ -135,13 +135,13 @@ function webView(sender){
         "elements":[
           {
             "title":"Classic White T-Shirt",
-            "item_url":"https://petersfancyapparel.com/classic_white_tshirt",
-            "image_url":"https://petersfancyapparel.com/classic_white_tshirt.png",
+            "item_url":"http://www.sensee.ca",
+            "image_url":"https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
             "subtitle":"Soft white cotton t-shirt is back in style",
             "buttons":[
               {
                 "type":"web_url",
-                "url":"https://petersfancyapparel.com/classic_white_tshirt",
+                "url":"http://www.sensee.ca",
                 "title":"View Item",
                 "webview_height_ratio":"tall"
               }
