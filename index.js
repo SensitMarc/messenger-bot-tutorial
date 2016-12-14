@@ -125,6 +125,8 @@ httpRequest({
 	})		
 }
 
+/*
+
 function webView(sender){
 
 	let messageData = {
@@ -168,7 +170,7 @@ request({
 		}
 	})
 }   
-
+*/
 
 function sendGenericMessage(sender) {
 	let messageData = {
