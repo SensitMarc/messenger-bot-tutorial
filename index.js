@@ -38,10 +38,10 @@ app.post('/webhook/', function (req, res) {
            sendGenericMessage(sender)
             continue
         }
-	//      if (text === 'web') {
-	//	webView(sender)
-	//	    continue 
-	  //    }
+	      if (text === 'web') {
+		webView(sender)
+		    continue 
+	      }
 		      if (text === 'power') {
 		getReal(sender)
 		     continue 
