@@ -38,8 +38,8 @@ app.post('/webhook/', function (req, res) {
            sendGenericMessage(sender)
             continue
         }
-	      if (text === 'what is my power consumption?') {
-		getReal(sender)
+	      if (text === 'web') {
+		webView(sender)
 		    continue 
 	      }
 		      if (text === 'power') {
@@ -124,6 +124,51 @@ httpRequest({
 		}
 	})		
 }
+
+function webView(sender){
+
+	let messageData = {
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"generic",
+        "elements":[
+          {
+            "title":"Classic White T-Shirt",
+            "item_url":"https://petersfancyapparel.com/classic_white_tshirt",
+            "image_url":"https://petersfancyapparel.com/classic_white_tshirt.png",
+            "subtitle":"Soft white cotton t-shirt is back in style",
+            "buttons":[
+              {
+                "type":"web_url",
+                "url":"https://petersfancyapparel.com/classic_white_tshirt",
+                "title":"View Item",
+                "webview_height_ratio":"tall"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+} 
+request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}   
+
 
 function sendGenericMessage(sender) {
 	let messageData = {
