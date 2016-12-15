@@ -124,6 +124,7 @@ httpRequest({
 		}
 	})		
 }
+
 /*
 function webView(sender){
 
@@ -184,6 +185,7 @@ function sendGenericMessage(sender) {
 						 "type": "web_url",
                         			"url": "http://sensee.ca/prototypes/index.html",
                        				 "title": "my house"
+						 "webview_height_ratio": "compact"
 					}, {
 						"type": "postback",
 						"title": "Postback",
