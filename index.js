@@ -137,7 +137,7 @@ function webView(sender){
 		"type": "web_url",
         	"url": "http://sensee.ca/prototypes/index.html",
          	"title": "my house",
-		"webview_height_ratio": "compact"
+		"webview_height_ratio": "tall"
 	},
 	      {
             "type":"postback",
