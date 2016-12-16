@@ -38,10 +38,10 @@ app.post('/webhook/', function (req, res) {
            sendGenericMessage(sender)
             continue
         }
-	//      if (text === 'web') {
-	//	webView(sender)
-	//	    continue 
-	  //    }
+	      if (text === 'web') {
+		webView(sender)
+		    continue 
+	      }
 		      if (text === 'power') {
 		getReal(sender)
 		     continue 
@@ -125,34 +125,29 @@ httpRequest({
 	})		
 }
 
-/*
-function webView(sender){
 
+function webView(sender){
 	let messageData = {
-    "attachment":{
+"attachment":{
       "type":"template",
       "payload":{
-        "template_type":"generic",
-        "elements":[
-          {
-            "title":"Classic White T-Shirt",
-            "item_url":"http://www.sensee.ca",
-            "image_url":"https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
-            "subtitle":"Soft white cotton t-shirt is back in style",
-            "buttons":[
-              {
-                "type":"web_url",
-                "url":"http://www.sensee.ca",
-                "title":"View Item",
-                "webview_height_ratio":"tall"
-              }
-            ]
+        "template_type":"button",
+        "text":"What do you want to do next?",
+	"buttons": [{
+		"type": "web_url",
+        	"url": "http://sensee.ca/prototypes/index.html",
+         	"title": "my house",
+		"webview_height_ratio": "compact"
+	},
+	      {
+            "type":"postback",
+            "title":"Start Chatting",
+            "payload":"USER_DEFINED_PAYLOAD"
           }
         ]
       }
     }
   }
-} 
 request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
 		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
@@ -169,7 +164,8 @@ request({
 		}
 	})
 }   
-*/
+
+
 
 function sendGenericMessage(sender) {
 	let messageData = {
