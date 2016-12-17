@@ -132,7 +132,7 @@ function webView(sender){
       "type":"template",
       "payload":{
         "template_type":"button",
-        "text":"What do you want to do next?",
+        "text":"What do you want to do?",
 	"buttons": [{
 		"type": "web_url",
         	"url": "http://sensee.ca/prototypes/index.html",
@@ -147,7 +147,7 @@ function webView(sender){
 	},
 	      {
             "type":"postback",
-            "title":"Start Chatting",
+            "title":"maintenance",
             "payload":"USER_DEFINED_PAYLOAD"
           }
         ]
