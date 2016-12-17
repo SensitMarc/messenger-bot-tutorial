@@ -136,7 +136,13 @@ function webView(sender){
 	"buttons": [{
 		"type": "web_url",
         	"url": "http://sensee.ca/prototypes/index.html",
-         	"title": "my house",
+         	"title": "analytics",
+		"webview_height_ratio": "tall"
+	},
+		    {
+		"type": "web_url",
+        	"url": "http://sensee.ca/prototypes/index.html",
+         	"title": "status",
 		"webview_height_ratio": "tall"
 	},
 	      {
@@ -180,7 +186,7 @@ function sendGenericMessage(sender) {
 					"buttons": [{
 						 "type": "web_url",
                         			"url": "http://sensee.ca/prototypes/index.html",
-                       				 "title": "my house",
+                       				 "title": "analytics",
 						 "webview_height_ratio": "compact"
 					}, {
 						"type": "postback",
