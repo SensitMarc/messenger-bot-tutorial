@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 app.get('/', function (req, res) {
 	res.send('hello world i am a secret bot')
 })
-
+/*
 // for facebook verification
 app.get('/webhook', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
@@ -29,8 +29,8 @@ app.get('/webhook', function(req, res) {
     res.sendStatus(403);          
   }  
 });
+*/
 
-/*
 // for facebook verification
 app.get('/webhook/', function (req, res) {
 	if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
@@ -38,7 +38,7 @@ app.get('/webhook/', function (req, res) {
 	}
 	res.send('Error, wrong token')
 })
-*/
+
 
 // to post data
 app.post('/webhook/', function (req, res) {
