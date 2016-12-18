@@ -62,6 +62,7 @@ app.post('/webhook/', function (req, res) {
  const token = process.env.FB_PAGE_ACCESS_TOKEN_SENSEE
 //const token = "FB_PAGE_ACCESS_TOKEN"
 
+let messageData = {
   "setting_type" : "call_to_actions",
   "thread_state" : "existing_thread",
   "call_to_actions":[
@@ -89,6 +90,7 @@ app.post('/webhook/', function (req, res) {
     }
   ]
 }
+}
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
 		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
@@ -105,6 +107,7 @@ app.post('/webhook/', function (req, res) {
 		}
 	})
 }
+
 
 function sendTextMessage(sender, text) {
 let	messageData = { text:text }
