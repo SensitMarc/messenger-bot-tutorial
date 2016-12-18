@@ -76,7 +76,7 @@ app.post('/webhook/', function (req, res) {
  const token = process.env.FB_PAGE_ACCESS_TOKEN_SENSEE
 //const token = "FB_PAGE_ACCESS_TOKEN"
 
-function addPersistentMenu(sender){
+function addPersistentMenu(){
  request({
     url: 'https://graph.facebook.com/v2.6/me/thread_settings',
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
