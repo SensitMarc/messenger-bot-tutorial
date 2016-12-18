@@ -62,52 +62,43 @@ app.post('/webhook/', function (req, res) {
  const token = process.env.FB_PAGE_ACCESS_TOKEN_SENSEE
 //const token = "FB_PAGE_ACCESS_TOKEN"
 
-let messageData = {
-  "setting_type" : "call_to_actions",
-  "thread_state" : "existing_thread",
-  "call_to_actions":[
-    {
-      "type":"postback",
-      "title":"Help",
-      "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
-    },
-    {
-      "type":"postback",
-      "title":"Start a New Order",
-      "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
-    },
-    {
-      "type":"web_url",
-      "title":"Checkout",
-      "url":"http://www.sensee.ca",
-      "webview_height_ratio": "full",
-      "messenger_extensions": true
-    },
-    {
-      "type":"web_url",
-      "title":"View Website",
-      "url":"http://www.sensee.ca"
+function addPersistentMenu(){
+ request({
+    url: 'https://graph.facebook.com/v2.6/me/thread_settings',
+    qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
+    method: 'POST',
+    json:{
+        setting_type : "call_to_actions",
+        thread_state : "existing_thread",
+        call_to_actions:[
+            {
+              type:"postback",
+              title:"Home",
+              payload:"home"
+            },
+            {
+              type:"postback",
+              title:"Joke",
+              payload:"joke"
+            },
+            {
+              type:"web_url",
+              title:"sensee,
+              url:"http://www.sensee.ca/"
+            }
+          ]
     }
-  ]
-}
-}
-	request({
-		url: 'https://graph.facebook.com/v2.6/me/messages',
-		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
-		method: 'POST',
-		json: {
-			recipient: {id:sender},
-			message: messageData,
-		}
-	}, function(error, response, body) {
-		if (error) {
-			console.log('Error sending messages: ', error)
-		} else if (response.body.error) {
-			console.log('Error: ', response.body.error)
-		}
-	})
-}
 
+}, function(error, response, body) {
+    console.log(response)
+    if (error) {
+        console.log('Error sending messages: ', error)
+    } else if (response.body.error) {
+        console.log('Error: ', response.body.error)
+    }
+})
+
+}
 
 function sendTextMessage(sender, text) {
 let	messageData = { text:text }
