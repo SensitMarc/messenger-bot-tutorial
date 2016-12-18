@@ -83,7 +83,7 @@ function addPersistentMenu(){
             },
             {
               type:"web_url",
-              title:"sensee,
+              title:"sensee",
               url:"http://www.sensee.ca/"
             }
           ]
