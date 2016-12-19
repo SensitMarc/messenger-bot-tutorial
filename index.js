@@ -85,9 +85,9 @@ app.post('/webhook/', function (req, res) {
             {
               type:"web_url",
               title:"DMS Software Website",
-              url:"http://www.dynamic-memory.com"
-	//webview_height_ratio: "full",
-      //messenger_extensions: "true"
+              url:"http://www.dynamic-memory.com",
+		webview_height_ratio: "full",
+      		messenger_extensions: "true"
             }
           ]
     }
