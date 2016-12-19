@@ -39,8 +39,8 @@ app.post('/webhook/', function (req, res) {
             continue
         }
 	      if (text === 'web') {
-		webView(sender)
-		      addPersistentMenu(sender)
+	//	webView(sender)
+		      addPersistentMenu()
 		    continue 
 	      }
 		      if (text === 'power') {
