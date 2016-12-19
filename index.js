@@ -88,8 +88,8 @@ app.post('/webhook/', function (req, res) {
             },
             {
               type:"web_url",
-              title:"DMS Software Website",
-              url:"http://www.dynamic-memory.com"
+              title:"my website",
+              url:"http://www.sensee.ca"
             }
           ]
     }
