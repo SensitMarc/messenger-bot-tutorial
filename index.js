@@ -39,8 +39,8 @@ app.post('/webhook/', function (req, res) {
             continue
         }
 	      if (text === 'web') {
-		webView(sender);
-		      addPersistentMenu();
+		webView(sender)
+		      addPersistentMenu(sender)
 		    continue 
 	      }
 		      if (text === 'power') {
@@ -63,7 +63,7 @@ app.post('/webhook/', function (req, res) {
  const token = process.env.FB_PAGE_ACCESS_TOKEN_SENSEE
 //const token = "FB_PAGE_ACCESS_TOKEN"
 
- function addPersistentMenu(){
+ function addPersistentMenu(sender){
  request({
     url: 'https://graph.facebook.com/v2.6/me/thread_settings',
     qs: { access_token: process.env.FB_PAGE_ACCESS_TOKEN_SENSEE },
