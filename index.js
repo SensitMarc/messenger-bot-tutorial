@@ -39,7 +39,8 @@ app.post('/webhook/', function (req, res) {
             continue
         }
 	      if (text === 'web') {
-		webView(sender)
+		webView(sender);
+		      addPersistentMenu();
 		    continue 
 	      }
 		      if (text === 'power') {
@@ -61,7 +62,6 @@ app.post('/webhook/', function (req, res) {
 // recommended to inject access tokens as environmental variables, e.g.
  const token = process.env.FB_PAGE_ACCESS_TOKEN_SENSEE
 //const token = "FB_PAGE_ACCESS_TOKEN"
-addPersistentMenu();
 
  function addPersistentMenu(){
  request({
