@@ -1,3 +1,5 @@
+'use strict'
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
@@ -40,10 +42,13 @@ app.post('/webhook/', function (req, res) {
         }
 	      if (text === 'web') {
 		webView(sender)
-		      addPersistentMenu()
 		    continue 
 	      }
-		      if (text === 'power') {
+	      if (text === 'menu') {
+		addPersistentMenu()
+		      continue
+	      }
+		if (text === 'power') {
 		getReal(sender)
 		     continue 
 	      }      
@@ -85,9 +90,7 @@ app.post('/webhook/', function (req, res) {
             {
               type:"web_url",
               title:"DMS Software Website",
-              url:"http://www.dynamic-memory.com",
-		webview_height_ratio: "full",
-      		messenger_extensions: "true"
+              url:"http://www.dynamic-memory.com"
             }
           ]
     }
