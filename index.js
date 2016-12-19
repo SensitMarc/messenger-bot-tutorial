@@ -39,7 +39,7 @@ app.post('/webhook/', function (req, res) {
             continue
         }
 	      if (text === 'web') {
-	//	webView(sender)
+		webView(sender)
 		      addPersistentMenu()
 		    continue 
 	      }
