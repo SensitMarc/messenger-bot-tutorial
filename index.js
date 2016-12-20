@@ -73,23 +73,23 @@ app.post('/webhook/', function (req, res) {
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
     method: 'POST',
     json:{
-        setting_type:"call_to_actions",
-        thread_state:"existing_thread",
+        setting_type:'call_to_actions',
+        thread_state:'existing_thread',
         call_to_actions:[
             {
-              type:"postback",
-              title:"Home",
-              payload:"home"
+              type:'postback',
+              title:'Home',
+              payload:'home'
             },
             {
-              type:"postback",
-              title:"Joke",
-              payload:"joke"
+              type:'postback',
+              title:'Joke',
+              payload:'joke'
             },
             {
-              type:"web_url",
-              title:"my website",
-              url:"http://www.sensee.ca"
+              type:'web_url',
+              title:'my website',
+              url:'http://sensee.ca/'
             }
           ]
     }
