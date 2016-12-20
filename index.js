@@ -85,12 +85,12 @@ app.post('/webhook/', function (req, res) {
               type:'postback',
               title:'Joke',
               payload:'joke'
-            },
-            {
-              type:'web_url',
-              title:'my website',
-              url:'http://sensee.ca/'
             }
+           // {
+           //   type:'web_url',
+           //   title:'my website',
+           //   url:'http://sensee.ca/'
+          //  }
           ]
     }
 
