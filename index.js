@@ -88,7 +88,7 @@ app.post('/webhook/', function (req, res) {
             },
             {
               type:'web_url',
-              title:'Analyrics',
+              title:'Analytics',
               url:'http://sensee.ca/prototypes/index.html',
 	      webview_height_ratio: 'tall'
             }
