@@ -78,19 +78,19 @@ app.post('/webhook/', function (req, res) {
         call_to_actions:[
             {
               type:'postback',
-              title:'Home',
-              payload:'home'
+              title:'Status',
+              payload:'status'
             },
             {
               type:'postback',
-              title:'Joke',
-              payload:'joke'
+              title:'Analytics',
+              payload:'analytics'
+            },
+            {
+              type:'web_url',
+              title:'my website',
+              url:'http://sensee.ca/'
             }
-           // {
-           //   type:'web_url',
-           //   title:'my website',
-           //   url:'http://sensee.ca/'
-          //  }
           ]
     }
 
