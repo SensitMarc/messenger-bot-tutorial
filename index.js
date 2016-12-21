@@ -197,7 +197,7 @@ function webView(sender){
 	      {
             "type":"postback",
             "title":"Start Chatting",
-            "payload":"USER_DEFINED_PAYLOAD"
+            "payload":"power"
           }
         ]
       }
