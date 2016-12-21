@@ -64,8 +64,8 @@ app.post('/webhook/', function (req, res) {
   })
 
 // recommended to inject access tokens as environmental variables, e.g.
- const token = process.env.FB_PAGE_ACCESS_TOKEN_SENSEE
- const token = process.env.DEVICE_ACCESS_TOKEN
+ const token = process.env.FB_PAGE_ACCESS_TOKEN_SENSEE;
+ const token = process.env.DEVICE_ACCESS_TOKEN;
 //const token = "FB_PAGE_ACCESS_TOKEN"
 
 /* function start() {
@@ -146,7 +146,7 @@ let	messageData = { text:text }
 
 function getReal(sender){
 request({
-    	url:'https://api.particle.io/v1/devices/48ff6e065067555013541287/watts',
+    	url: 'https://api.particle.io/v1/devices/48ff6e065067555013541287/watts',
 	qs: {access_token:process.env.DEVICE_ACCESS_TOKEN},
 	method: 'GET'
     }, function(error, response, body) {
