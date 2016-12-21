@@ -96,7 +96,7 @@ app.post('/webhook/', function (req, res) {
             {
               type:'postback',
               title:'Status',
-              payload: getReal(sender)
+              payload: 'getReal(sender)'
             },
             {
               type:'postback',
