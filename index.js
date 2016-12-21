@@ -96,12 +96,12 @@ app.post('/webhook/', function (req, res) {
             {
               type:'postback',
               title:'Status',
-              payload: 'power',
+              payload: 'power'
             },
             {
               type:'postback',
               title:'Maintenance',
-              payload:'maintenance',
+              payload:'maintenance'
             },
             {
               type:'web_url',
