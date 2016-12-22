@@ -57,7 +57,7 @@ app.post('/webhook/', function (req, res) {
       if (event.postback) {
         text = JSON.stringify(event.postback)
         sendTextMessage(sender, "Postback received: "+ text.substring(0, 200))
-	      if (text === 'status'){
+	      if (text.substring(0, 200)) === 'status'){
 		      getReal(sender)
 	      }
 	continue
