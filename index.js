@@ -57,9 +57,7 @@ app.post('/webhook/', function (req, res) {
       if (event.postback) {
         text = JSON.stringify(event.postback)
         sendTextMessage(sender, "Postback received: "+ text.substring(0, 200))
-	      if ((text.substring(0, 200)) === 'status'){
-		      getReal(sender)
-	      }
+	getReal(sender, JSON.stringify(event.postback))
 	continue
       }
     }
@@ -162,7 +160,7 @@ request({
             //sendGetReal(sender, messageData);
         } else {
             console.log(error);
-           sendTextMessage(sender, 'Sorry I was unable to determine your closest BART station.');
+           sendTextMessage(sender, 'Sorry dude');
         }
     });
 	
