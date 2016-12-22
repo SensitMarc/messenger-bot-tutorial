@@ -57,7 +57,7 @@ app.post('/webhook/', function (req, res) {
       if (event.postback) {
         text = JSON.stringify(event.postback)
         sendTextMessage(sender, "Postback received: "+ text.substring(0, 200))
-	      if (text === 'power'){
+	      if (text === 'status'){
 		      getReal(sender)
 	      }
 	continue
@@ -99,7 +99,7 @@ app.post('/webhook/', function (req, res) {
             {
               type:'postback',
               title:'Status',
-              payload: 'power'
+              payload: 'status'
             },
             {
               type:'postback',
