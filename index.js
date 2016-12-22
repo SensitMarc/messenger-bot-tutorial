@@ -59,6 +59,9 @@ app.post('/webhook/', function (req, res) {
         sendTextMessage(sender, "Postback received: "+ text.substring(0, 200), token)
         continue
       }
+	    getReal(sender)
+	    continue
+      }
     }
     res.sendStatus(200)
   })
