@@ -1,4 +1,3 @@
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
@@ -56,8 +55,9 @@ app.post('/webhook/', function (req, res) {
       }
       if (event.postback) {
         text = JSON.stringify(event.postback)
-        sendTextMessage(sender, "Postback received: "+ text.substring(0, 200), token)
-        continue
+        sendTextMessage(sender, "Postback received: "+ text.substring(0, 200))
+	getReal(sender, JSON.stringify(event.postback))
+	continue
       }
     }
     res.sendStatus(200)
@@ -92,7 +92,7 @@ app.post('/webhook/', function (req, res) {
             {
               type:'postback',
               title:'Status',
-              payload: 'power'
+              payload: 'status'
             },
             {
               type:'postback',
@@ -155,7 +155,7 @@ request({
             //sendGetReal(sender, messageData);
         } else {
             console.log(error);
-           sendTextMessage(sender, 'Sorry I was unable to determine your closest BART station.');
+           sendTextMessage(sender, 'Sorry dude');
         }
     });
 	
