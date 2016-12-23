@@ -112,7 +112,7 @@ app.post('/webhook/', function (req, res) {
   // }
     }
     res.sendStatus(200)
-  })
+  }
 	
 // recommended to inject access tokens as environmental variables, e.g.
  const token = process.env.FB_PAGE_ACCESS_TOKEN_SENSEE
