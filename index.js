@@ -25,6 +25,7 @@ app.get('/webhook/', function (req, res) {
 	}
 	res.send('Error, wrong token')
 })
+/*
 
 app.post('/webhook/', function (req, res) {
   messaging_events = req.body.entry[0].messaging;
@@ -64,7 +65,8 @@ app.post('/webhook/', function (req, res) {
   res.sendStatus(200);
 });
 
-	/*
+*/
+
 // to post data
 app.post('/webhook/', function (req, res) {
     messaging_events = req.body.entry[0].messaging
@@ -101,7 +103,6 @@ app.post('/webhook/', function (req, res) {
     }
     res.sendStatus(200)
   })
-*/
 	
 // recommended to inject access tokens as environmental variables, e.g.
  const token = process.env.FB_PAGE_ACCESS_TOKEN_SENSEE
