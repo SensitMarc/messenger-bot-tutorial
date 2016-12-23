@@ -26,6 +26,45 @@ app.get('/webhook/', function (req, res) {
 	res.send('Error, wrong token')
 })
 
+app.post('/webhook/', function (req, res) {
+  messaging_events = req.body.entry[0].messaging;
+  for (i = 0; i < messaging_events.length; i++) {
+    event = req.body.entry[0].messaging[i];
+    sender = event.sender.id;
+    if (event.message && event.message.text) {
+      text = event.message.text;
+      // Handle a text message from this sender
+	    if (text === 'Generic') {
+           sendGenericMessage(sender)
+            continue
+        }
+	      if (text === 'web') {
+		webView(sender)
+		    continue 
+	      }
+	      if (text === 'menu') {
+		addPersistentMenu()
+		      continue
+	      }
+		if (text === 'power') {
+		getReal(sender)
+		     continue 
+	      }      
+	      
+        sendTextMessage(sender, text.substring(0, 200))
+   
+    } else if (event.postback && event.postback.payload) {
+      payload = event.postback.payload;
+      // Handle a payload from this sender
+	    if (payload === 'power'){
+		getReal(sender)
+		     continue     
+    }
+  }
+  res.sendStatus(200);
+});
+
+	/*
 // to post data
 app.post('/webhook/', function (req, res) {
     messaging_events = req.body.entry[0].messaging
@@ -62,7 +101,8 @@ app.post('/webhook/', function (req, res) {
     }
     res.sendStatus(200)
   })
-
+*/
+	
 // recommended to inject access tokens as environmental variables, e.g.
  const token = process.env.FB_PAGE_ACCESS_TOKEN_SENSEE
  const tokentwo= process.env.DEVICE_ACCESS_TOKEN
