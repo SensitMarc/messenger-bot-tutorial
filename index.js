@@ -105,7 +105,8 @@ app.post('/webhook/', function (req, res) {
       var payload = JSON.stringify(event.postback.payload);
       // Handle a payload from this sender
 	    if (payload === 'power'){
-		getReal(sender);
+		//getReal(sender)
+		    sendTextMessage(sender, text.substring(0, 200))
 		     continue     
    
    }
