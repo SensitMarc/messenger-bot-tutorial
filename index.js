@@ -92,7 +92,7 @@ app.post('/webhook/', function (req, res) {
             {
               type:'postback',
               title:'Status',
-              payload:  {'USER_DEFINED_PAYLOAD',  'title' : "Find a product"}
+              payload:  'USER_DEFINED_PAYLOAD', 'title' : "Find a product"
             },
             {
               type:'postback',
