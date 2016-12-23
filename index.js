@@ -1,4 +1,3 @@
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
@@ -57,8 +56,7 @@ app.post('/webhook/', function (req, res) {
       if (event.postback) {
         text = JSON.stringify(event.postback)
         sendTextMessage(sender, "Postback received: "+ text.substring(0, 200))
-	getReal(sender, JSON.stringify(event.postback))
-	continue
+	 continue
       }
     }
     res.sendStatus(200)
@@ -70,15 +68,11 @@ app.post('/webhook/', function (req, res) {
 //const token = "FB_PAGE_ACCESS_TOKEN"
 
 /* function start() {
-
         var eventSource = new EventSource("  ");
-
         eventSource.addEventListener('open', function(e) {
             console.log("Opened!"); },false);
-
         eventSource.addEventListener('error', function(e) {
             console.log("Errored!"); },false);
-
         eventSource.addEventListener('Uptime', function(e) {
             var parsedData = JSON.parse(e.data);
         }, false);
@@ -97,7 +91,7 @@ app.post('/webhook/', function (req, res) {
             {
               type:'postback',
               title:'Status',
-              payload: 'status'
+              payload: 'power'
             },
             {
               type:'postback',
@@ -160,7 +154,7 @@ request({
             //sendGetReal(sender, messageData);
         } else {
             console.log(error);
-           sendTextMessage(sender, 'Sorry dude');
+           sendTextMessage(sender, 'Sorry I was unable to determine your closest BART station.');
         }
     });
 	
@@ -276,4 +270,3 @@ function sendGenericMessage(sender) {
 // spin spin sugar
 app.listen(app.get('port'), function() {
 	console.log('running on port', app.get('port'))
-})
