@@ -1,3 +1,4 @@
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
@@ -55,8 +56,8 @@ app.post('/webhook/', function (req, res) {
       }
       if (event.postback) {
         text = JSON.stringify(event.postback)
-        sendTextMessage(sender, "Postback received: "+ text.substring(0, 200))
-	 continue
+        sendTextMessage(sender, "Postback received: "+ text.substring(0, 200), token)
+        continue
       }
     }
     res.sendStatus(200)
@@ -270,3 +271,4 @@ function sendGenericMessage(sender) {
 // spin spin sugar
 app.listen(app.get('port'), function() {
 	console.log('running on port', app.get('port'))
+})
