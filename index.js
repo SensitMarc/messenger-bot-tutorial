@@ -102,12 +102,12 @@ app.post('/webhook/', function (req, res) {
       }
     */   
       else if (event.postback && event.postback.payload) {
-      payload = JSON.stringify(event.postback.payload);
+      var payload = JSON.stringify(event.postback.payload);
       // Handle a payload from this sender
 	    if (payload === 'power'){
 		getReal(sender);
 		     continue     
-    }
+   
    }
     }
     res.sendStatus(200)
