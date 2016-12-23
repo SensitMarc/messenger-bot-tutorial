@@ -94,13 +94,21 @@ app.post('/webhook/', function (req, res) {
 	      
         sendTextMessage(sender, text.substring(0, 200))
       }
-      if (event.postback) {
+   /*   if (event.postback) {
         text = JSON.stringify(event.postback)
         sendTextMessage(sender, "Postback received: "+ text.substring(0, 200))
 	getReal(sender, JSON.stringify(event.postback))
 	continue
       }
+    */   
+      else if (event.postback && event.postback.payload) {
+      payload = event.postback.payload;
+      // Handle a payload from this sender
+	    if (payload === 'power'){
+		getReal(sender)
+		     continue     
     }
+   }
     res.sendStatus(200)
   })
 	
@@ -133,7 +141,7 @@ app.post('/webhook/', function (req, res) {
             {
               type:'postback',
               title:'Status',
-              payload:  'power'
+              payload:'power'
             },
             {
               type:'postback',
