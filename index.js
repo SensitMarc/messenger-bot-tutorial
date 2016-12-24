@@ -73,8 +73,12 @@ app.post('/webhook/', function (req, res) {
     for (i = 0; i < messaging_events.length; i++) {
        event = req.body.entry[0].messaging[i]
       sender = event.sender.id
-      if (event.message && event.message.text) {
-         text = event.message.text
+      //if (event.message && event.message.text) {
+       //  text = event.message.text
+	      if ((event.message && event.message.text) || (event.postback && event.postback.payload)) {
+    var text = event.message ? event.message.text : event.postback.payload;
+    // Handle a text message from this sender
+		      
         if (text === 'Generic') {
            sendGenericMessage(sender)
             continue
@@ -94,11 +98,13 @@ app.post('/webhook/', function (req, res) {
 	      
         sendTextMessage(sender, text.substring(0, 200))
       }
-      if (event.postback && event.postback.payload) {
+   /*
+	    if (event.postback && event.postback.payload) {
         text = JSON.stringify(event.postback.payload)
 	      if (text === power){
-        sendTextMessage(sender, "Postback received: "+ text.substring(0, 200))
+        //sendTextMessage(sender, "Postback received: "+ text.substring(0, 200))
 	getReal(sender, JSON.stringify(event.postback.payload))
+	console.log(	      
 	continue
 	      }
       }
