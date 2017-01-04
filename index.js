@@ -207,7 +207,7 @@ request({
 	method: 'GET'
     }, function(error, response, body) {
         var maya;
-            //messageData;
+            var messageData;
             
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
