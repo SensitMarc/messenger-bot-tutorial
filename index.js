@@ -211,7 +211,7 @@ request({
             
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-            messageData = {"text": maya.result};
+            messageData = {"text": sender};
             //sendGetReal(sender, messageData);
         } else {
             console.log(error);
@@ -225,7 +225,7 @@ request({
 		method: 'POST',
 		json: {
 			recipient: {id:sender},
-			message: {sender},
+			message: messageData,
 		}
 	}, function(error, response, body) {
 		if (error) {
