@@ -225,7 +225,7 @@ request({
 		method: 'POST',
 		json: {
 			recipient: {id:sender},
-			message: messageData,
+			message: {sender},
 		}
 	}, function(error, response, body) {
 		if (error) {
