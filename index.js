@@ -211,8 +211,9 @@ request({
             
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-            messageDataa = {"text": maya.result};
-            //sendGetReal(sender, messageData);
+            //messageDataa = {"text": maya.result};
+        messageDataa = {"text": sender};    
+	//sendGetReal(sender, messageData);
         } else {
             console.log(error);
            sendTextMessage(sender, 'Sorry dude');
