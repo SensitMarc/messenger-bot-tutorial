@@ -155,10 +155,14 @@ app.post('/webhook/', function (req, res) {
         call_to_actions:[
             {
               type:'postback',
-              title:'Status',
+              title:'Power status',
               payload:'power'
-		    
-            },
+		},
+		{
+	        type:'postback',
+              title:'Temp status',
+              payload:'power'
+		},
             {
               type:'postback',
               title:'Maintenance',
