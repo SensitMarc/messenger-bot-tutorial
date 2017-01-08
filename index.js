@@ -100,7 +100,7 @@ app.post('/webhook/', function (req, res) {
 		      continue
 	      }
 		      
-    //    sendTextMessage(sender, text.substring(0, 200))
+        sendTextMessage(sender, text.substring(0, 200))
       }
    /*
 	    if (event.postback && event.postback.payload) {
@@ -156,7 +156,8 @@ app.post('/webhook/', function (req, res) {
             {
               type:'postback',
               title:'Status',
-              payload:'power'
+              payload:{'power','temp'}
+		    
             },
             {
               type:'postback',
