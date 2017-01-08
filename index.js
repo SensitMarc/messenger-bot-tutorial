@@ -244,11 +244,11 @@ request({
 	qs: {access_token:process.env.DEVICE_ACCESS_TOKEN},
 	method: 'GET'
     }, function(error, response, body) {
-        var maya;
+        var maya2;
            // var messageDataa;
             
         if (! error && response.statusCode === 200) {
-            maya = JSON.parse(body);
+            maya2 = JSON.parse(body);
             messageDataa = {"text": maya.result};
         //messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
