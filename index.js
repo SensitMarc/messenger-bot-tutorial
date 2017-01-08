@@ -92,7 +92,7 @@ app.post('/webhook/', function (req, res) {
 		      continue
 	      }
 		if (text === 'power') {
-		getReal(sender)
+		getReal(sender),
 		getTemperature(sender)
 		     continue 
 	      }      
