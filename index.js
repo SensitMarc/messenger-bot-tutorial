@@ -220,7 +220,7 @@ request({
             
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-            messageDataa = {"text": maya.result};
+            messageDataa = {"text":"power consumption is:" maya.result};
       //  messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
@@ -257,7 +257,7 @@ request({
             
         if (! error && response.statusCode === 200) {
             maya2 = JSON.parse(body);
-            messageDataa = {"text": maya2.result};
+            messageDataa = {"text": "room temperature is "maya2.result};
         //messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
