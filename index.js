@@ -93,6 +93,7 @@ app.post('/webhook/', function (req, res) {
 	      }
 		if (text === 'power') {
 		getReal(sender)
+		getTemperature(sender)
 		     continue 
 	      }      
 	      
@@ -211,8 +212,45 @@ request({
             
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-            //messageDataa = {"text": maya.result};
-        messageDataa = {"text": sender};    
+            messageDataa = {"text": maya.result};
+      //  messageDataa = {"text": sender};    
+	//sendGetReal(sender, messageData);
+        } else {
+            console.log(error);
+           sendTextMessage(sender, 'Sorry dude');
+        }
+    });
+	
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageDataa,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})		
+}
+
+function getTemperature(sender){
+request({
+    	url: 'https://api.particle.io/v1/devices/48ff6e065067555013541287/temperature',
+	qs: {access_token:process.env.DEVICE_ACCESS_TOKEN},
+	method: 'GET'
+    }, function(error, response, body) {
+        var maya;
+           // var messageDataa;
+            
+        if (! error && response.statusCode === 200) {
+            maya = JSON.parse(body);
+            messageDataa = {"text": maya.result};
+        //messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
             console.log(error);
