@@ -99,7 +99,10 @@ app.post('/webhook/', function (req, res) {
 		      getTemperature(sender)
 		      continue
 	      }
-    
+    		if (text === 'hey'){
+		      sendTextMessage(sender, text.substring(0, 200))
+		      continue
+	      }  
         sendTextMessage(sender, text.substring(0, 200))
       }
    /*
@@ -190,7 +193,7 @@ app.post('/webhook/', function (req, res) {
 
 
 function sendTextMessage(sender, text) {
-let	messageData = { text: "Hi , welcome to this bot." + name }
+let	messageData = { text: "Hi , welcome to this bot." + text }
 	
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
