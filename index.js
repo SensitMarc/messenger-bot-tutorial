@@ -190,7 +190,7 @@ app.post('/webhook/', function (req, res) {
 
 
 function sendTextMessage(sender, text) {
-let	messageData = { text: "Hi {{user_first_name}}, welcome to this bot." }
+let	messageData = { text: "Hi , welcome to this bot." + sender }
 	
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
