@@ -100,7 +100,7 @@ app.post('/webhook/', function (req, res) {
 		      continue
 	      }
 		if (text === 'hey'){
-		      var name = sender;
+		      sendTextMessage(sender)
 		      continue
 	      }      
         sendTextMessage(sender, text.substring(0, 200))
