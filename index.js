@@ -100,7 +100,7 @@ app.post('/webhook/', function (req, res) {
 		      continue
 	      }
     		if (text === 'hey'){
-		      sendTextMessage(sender, text.substring(0, 200))
+		      getPersonal(sender)
 		      continue
 	      }  
         sendTextMessage(sender, text.substring(0, 200))
@@ -191,7 +191,42 @@ app.post('/webhook/', function (req, res) {
 
 }
 
-
+function getPersonal(sender){
+request({
+    	url: 'https://graph.facebook.com/v2.6/me',
+	qs: {access_token:process.env.DEVICE_ACCESS_TOKEN},
+	method: 'GET'
+    }, function(error, response, body) {
+        var name;
+           // var messageDataa;
+            
+        if (! error && response.statusCode === 200) {
+            name = JSON.parse(body);
+            messageDataa = {"text":name.name};
+      //  messageDataa = {"text": sender};    
+	//sendGetReal(sender, messageData);
+        } else {
+            console.log(error);
+           sendTextMessage(sender, 'Sorry dude');
+        }
+    });
+	
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageDataa,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})		
+}
 function sendTextMessage(sender, text) {
 let	messageData = { text: "Hi , welcome to this bot." + text }
 	
