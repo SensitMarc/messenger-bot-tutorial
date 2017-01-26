@@ -99,10 +99,10 @@ app.post('/webhook/', function (req, res) {
 		      getTemperature(sender)
 		      continue
 	      }
-    	/*	if (text === 'hey'){
+    		if (text === 'hey'){
 		      getPersonal(sender)
 		      continue
-	      }*/
+	      }
 		      
         sendTextMessage(sender, text.substring(0, 200))
       }
@@ -191,10 +191,10 @@ app.post('/webhook/', function (req, res) {
 })
 
 }
-/*
+
 function getPersonal(sender){
 request({
-    	url: 'https://graph.facebook.com/v2.6/me',
+    	url: 'https://graph.facebook.com/v2.6/' + 'sender',
 	qs: {access_token:process.env.DEVICE_ACCESS_TOKEN},
 	method: 'GET'
     }, function(error, response, body) {
@@ -203,7 +203,7 @@ request({
             
         if (! error && response.statusCode === 200) {
             name = JSON.parse(body);
-            messageDataa = {"text":name.name};
+            messageDataa = {"text":name.first_name};
       //  messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
@@ -228,7 +228,7 @@ request({
 		}
 	})		
 }
-*/
+
 
 function sendTextMessage(sender, text) {
 let	messageData = { text: "Hi , welcome to this bot." + text }
