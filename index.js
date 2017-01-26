@@ -258,7 +258,7 @@ request({
 	method: 'GET'
     }, function(error, response, body) {
         var maya;
-            var messageDataPower;
+            //var messageDataPower;
             
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
@@ -295,7 +295,7 @@ request({
 	method: 'GET'
     }, function(error, response, body) {
         var maya2;
-            var messageDataTemp;
+           // var messageDataTemp;
             
         if (! error && response.statusCode === 200) {
             maya2 = JSON.parse(body);
