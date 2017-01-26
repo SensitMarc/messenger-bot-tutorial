@@ -199,11 +199,12 @@ request({
 	qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
 	method: 'GET'
     }, function(error, response, body) {
-        var name="0";
+        var name;
             //var messageDataa;
             
         if (! error && response.statusCode === 200) {
-            name = JSON.parse(body);
+            name = "reset";
+		name = JSON.parse(body);
             messageDataa = {"text":"Hi, " + name.first_name + ", how can I help you?"};
       //  messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
