@@ -204,7 +204,7 @@ request({
             
         if (! error && response.statusCode === 200) {
             name = JSON.parse(body);
-            messageDataa = {"text":"Hi" + name.first_name + "how can I help you?"};
+            messageDataa = {"text":"Hi, " + name.first_name + " how can I help you?"};
       //  messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
