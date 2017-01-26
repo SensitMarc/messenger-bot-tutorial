@@ -199,7 +199,7 @@ request({
 	qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
 	method: 'GET'
     }, function(error, response, body) {
-        var name;
+        var name="0";
             //var messageDataa;
             
         if (! error && response.statusCode === 200) {
