@@ -204,7 +204,7 @@ request({
             
         if (! error && response.statusCode === 200) {
             name = JSON.parse(body);
-            messageDataa = {"text":"Hi, " + name.first_name + " how can I help you?"};
+            messageDataa = {"text":"Hi, " + name.first_name + ", how can I help you?"};
       //  messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
@@ -232,7 +232,7 @@ request({
 
 
 function sendTextMessage(sender, text) {
-let	messageData = { text: "Hi ,"+ text + "welcome to this bot." }
+let	messageData = { text:text}
 	
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
