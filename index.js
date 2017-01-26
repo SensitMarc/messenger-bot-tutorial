@@ -198,7 +198,7 @@ request({
 	qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
 	method: 'GET'
     }, function(error, response, body) {
-        var name
+        var name;
             //var messageDataa;
             
         if (! error && response.statusCode === 200) {
@@ -231,7 +231,7 @@ request({
 
 
 function sendTextMessage(sender, text) {
-let	messageData = { text: "Hi , welcome to this bot." + text }
+let	messageData = { text: "Hi ,"+text+ "welcome to this bot." }
 	
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
