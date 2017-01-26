@@ -195,7 +195,7 @@ app.post('/webhook/', function (req, res) {
 
 function getPersonal(sender){
 request({
-    	url: 'https://graph.facebook.com/v2.6/' + process.env.sender_id,
+    	url: 'https://graph.facebook.com/v2.6/' + sender,//process.env.sender_id,
 	qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
 	method: 'GET'
     }, function(error, response, body) {
