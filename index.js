@@ -231,7 +231,7 @@ request({
 
 
 function sendTextMessage(sender, text) {
-let	messageData = { text: "Hi ,"+ name.name + "welcome to this bot." }
+let	messageData = { text: "Hi ,"+ text + "welcome to this bot." }
 	
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
