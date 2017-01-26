@@ -104,7 +104,7 @@ app.post('/webhook/', function (req, res) {
 		      continue
 	      }
 		      
-     //   sendTextMessage(sender, text.substring(0, 200))
+        sendTextMessage(sender, text.substring(0, 200))
       }
    /*
 	    if (event.postback && event.postback.payload) {
@@ -258,11 +258,11 @@ request({
 	method: 'GET'
     }, function(error, response, body) {
         var maya;
-           // var messageDataa;
+            var messageDataPower;
             
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-            messageDataa = {"text":maya.result};
+            messageDataPower = {"text":maya.result};
       //  messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
@@ -277,7 +277,7 @@ request({
 		method: 'POST',
 		json: {
 			recipient: {id:sender},
-			message: messageDataa,
+			message: messageDataPower,
 		}
 	}, function(error, response, body) {
 		if (error) {
@@ -295,11 +295,11 @@ request({
 	method: 'GET'
     }, function(error, response, body) {
         var maya2;
-           // var messageDataa;
+            var messageDataTemp;
             
         if (! error && response.statusCode === 200) {
             maya2 = JSON.parse(body);
-            messageDataa = {"text":maya2.result};
+            messageDataTemp = {"text":maya2.result};
         //messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
@@ -314,7 +314,7 @@ request({
 		method: 'POST',
 		json: {
 			recipient: {id:sender},
-			message: messageDataa,
+			message: messageDataTemp,
 		}
 	}, function(error, response, body) {
 		if (error) {
