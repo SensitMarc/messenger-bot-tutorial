@@ -203,7 +203,7 @@ request({
             
         if (! error && response.statusCode === 200) {
             name = JSON.parse(body);
-            messageDataa = {"text":name.name};
+            messageDataa = {"text":"Hi" + name.name + "how can I help you?"};
       //  messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
@@ -230,7 +230,7 @@ request({
 }
 
 
-function sendTextMessage(sender, name.name) {
+function sendTextMessage(sender, text) {
 let	messageData = { text: "Hi ,"+ name.name + "welcome to this bot." }
 	
 	request({
