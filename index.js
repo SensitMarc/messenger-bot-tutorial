@@ -202,7 +202,7 @@ request({
             //var messageDataa;
             
         if (! error && response.statusCode === 200) {
-          //  name = JSON.parse(body);
+            name = JSON.parse(body);
             messageDataa = {"text":name.name};
       //  messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
