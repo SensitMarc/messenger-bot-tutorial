@@ -199,11 +199,11 @@ request({
 	method: 'GET'
     }, function(error, response, body) {
         //var name;
-           // var messageDataa;
+            //var messageDataa;
             
         if (! error && response.statusCode === 200) {
           //  name = JSON.parse(body);
-            messageDataa = {"text":"go"};
+            messageDataa = {"text":sender};
       //  messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
