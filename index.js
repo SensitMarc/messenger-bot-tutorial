@@ -134,7 +134,7 @@ app.post('/webhook/', function (req, res) {
 // recommended to inject access tokens as environmental variables, e.g.
  const token = process.env.FB_PAGE_ACCESS_TOKEN_SENSEE
  const tokentwo= process.env.DEVICE_ACCESS_TOKEN
- const tokenthree = process.env.sender_id
+ //const tokenthree = process.env.sender_id
 //const token = "FB_PAGE_ACCESS_TOKEN"
 
 /* function start() {
@@ -199,12 +199,12 @@ request({
 	qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
 	method: 'GET'
     }, function(error, response, body) {
-        var name=name.first_name;
+        var name;
             //var messageDataa;
             
         if (! error && response.statusCode === 200) {
             name = JSON.parse(body);
-            messageDataa = {"text":"Hi, " + name + ", how can I help you?"};
+            messageDataa = {"text":"Hi, " + name.first_name + ", how can I help you?"};
       //  messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
