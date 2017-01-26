@@ -198,7 +198,7 @@ request({
 	qs: {access_token:process.env.DEVICE_ACCESS_TOKEN},
 	method: 'GET'
     }, function(error, response, body) {
-        var name;
+        //var name;
            // var messageDataa;
             
         if (! error && response.statusCode === 200) {
