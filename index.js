@@ -423,7 +423,7 @@ app.listen(app.get('port'), function() {
 	console.log('running on port', app.get('port'))
 })
 
-var sslmode=require();
+var sslmode=require('sslmode');
 
 var pg = require('pg');
 
