@@ -417,14 +417,9 @@ function sendGenericMessage(sender) {
 		}
 	})
 }
-	
-// spin spin sugar
-app.listen(app.get('port'), function() {
-	console.log('running on port', app.get('port'))
-})
 
 //var sslmode=require('sslmode');
-/*
+
 var pg = require('pg');
 
 pg.defaults.ssl = true;
@@ -438,5 +433,12 @@ pg.connect(process.env.DATABASE_URL, function(err, client) {
       console.log(JSON.stringify(row));
     });
 });
-*/
+
+
+// spin spin sugar
+app.listen(app.get('port'), function() {
+	console.log('running on port', app.get('port'))
+})
+
+
 
