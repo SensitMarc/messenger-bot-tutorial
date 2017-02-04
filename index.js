@@ -424,7 +424,7 @@ app.listen(app.get('port'), function() {
 })
 
 var sslmode=require('sslmode');
-
+/*
 var pg = require('pg');
 
 pg.defaults.ssl = true;
@@ -438,3 +438,5 @@ pg.connect(process.env.DATABASE_URL, function(err, client) {
       console.log(JSON.stringify(row));
     });
 });
+*/
+
