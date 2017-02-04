@@ -26,7 +26,7 @@ app.get('/webhook/', function (req, res) {
 	res.send('Error, wrong token')
 })
 //var sslmode=require('sslmode');
-
+/*
 var pg = require('pg');
 
 pg.defaults.ssl = true;
@@ -40,6 +40,8 @@ pg.connect(process.env.DATABASE_URL, function(err, client) {
       console.log(JSON.stringify(row));
     });
 });
+*/
+
 /*
 
 app.post('/webhook/', function (req, res) {
