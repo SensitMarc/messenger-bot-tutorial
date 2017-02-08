@@ -84,7 +84,7 @@ app.post('/webhook/', function (req, res) {
 
 */
 var j = schedule.scheduleJob({hour: 00, minute: 00}, function(){
-   getReal(sender);
+   getReal(sender)
     });
 });
 
