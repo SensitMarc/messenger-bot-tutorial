@@ -83,7 +83,8 @@ app.post('/webhook/', function (req, res) {
 });
 
 */
-const scheduler = require('node-schedule');
+/*
+var scheduler = require('node-schedule');
 var rule = new scheduler.RecurrenceRule();
 rule.hour = 7
 rule.dayOfWeek = new schedule.Range(0,6)
@@ -91,6 +92,7 @@ var dailyJob = schedule.scheduleJob(date, function(){
  console.log('I run on days at 7:00');
 });
 scheduler.scheduleJob(rule,task);
+*/
 
 // to post data
 app.post('/webhook/', function (req, res) {
