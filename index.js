@@ -83,6 +83,24 @@ app.post('/webhook/', function (req, res) {
 });
 
 */
+function schedule(time) {
+    var now = new Date(),
+        next = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 
+                        time, 0, 0, 0),
+        diff = next - now;
+
+    if (diff < 0) {
+        diff += 86400000;
+    }
+    setTimeout(function () {
+        my_function();
+        schedule(time);
+    }, diff);
+}
+
+var times = [20];
+
+times.forEach(schedule);
 
 // to post data
 app.post('/webhook/', function (req, res) {
