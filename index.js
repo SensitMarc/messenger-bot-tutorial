@@ -83,7 +83,7 @@ app.post('/webhook/', function (req, res) {
 });
 
 */
-var scheduler = require('node-schedule');
+const scheduler = require('node-schedule');
 var rule = new scheduler.RecurrenceRule();
 rule.hour = 7
 rule.dayOfWeek = new schedule.Range(0,6)
