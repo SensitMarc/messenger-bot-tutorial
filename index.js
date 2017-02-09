@@ -133,10 +133,6 @@ app.post('/webhook/', function (req, res) {
 		      getPersonal(sender)
 		      continue
 	      }
-		      if (text === 'yo'){
-		      setTime(sender)
-		      continue
-	      }
 		      
         sendTextMessage(sender, text.substring(0, 200))
       }
