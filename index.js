@@ -134,7 +134,7 @@ app.post('/webhook/', function (req, res) {
 		      continue
 	      }
 		      if (text === 'yo'){
-		      setTime()
+		      setTime(sender)
 		      continue
 	      }
 		      
