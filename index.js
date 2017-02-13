@@ -25,78 +25,7 @@ app.get('/webhook/', function (req, res) {
 	}
 	res.send('Error, wrong token')
 })
-//var sslmode=require('sslmode');
-/*
-var pg = require('pg');
 
-pg.defaults.ssl = true;
-pg.connect(process.env.DATABASE_URL, function(err, client) {
-  if (err) throw err;
-  console.log('Connected to postgres! Getting schemas...');
-
-  client
-    .query('SELECT table_schema,table_name FROM information_schema.tables;')
-    .on('row', function(row) {
-      console.log(JSON.stringify(row));
-    });
-});
-*/
-
-/*
-
-app.post('/webhook/', function (req, res) {
-  messaging_events = req.body.entry[0].messaging;
-  for (i = 0; i < messaging_events.length; i++) {
-    event = req.body.entry[0].messaging[i];
-    sender = event.sender.id;
-    if (event.message && event.message.text) {
-      text = event.message.text;
-      // Handle a text message from this sender
-	    if (text === 'Generic') {
-           sendGenericMessage(sender)
-            continue
-        }
-	      if (text === 'web') {
-		webView(sender)
-		    continue 
-	      }
-	      if (text === 'menu') {
-		addPersistentMenu()
-		      continue
-	      }
-		if (text === 'power') {
-		getReal(sender)
-		     continue 
-	      }      
-	      
-        sendTextMessage(sender, text.substring(0, 200))
-   
-    } else if (event.postback && event.postback.payload) {
-      payload = event.postback.payload;
-      // Handle a payload from this sender
-	    if (payload === 'power'){
-		getReal(sender)
-		     continue     
-    }
-  }
-  res.sendStatus(200);
-});
-
-*/
-/*
-function setTime(){
-var scheduler = require('node-schedule');
-var rule = new scheduler.RecurrenceRule();
-rule.hour = 7
-rule.dayOfWeek = new schedule.Range(0,6)
-var dailyJob = schedule.scheduleJob(date, function(){
- console.log('I run on days at 7:00');
-});
-scheduler.scheduleJob(rule,task);
-}
-*/
-
-getReal(sender_id);
 
 // to post data
 app.post('/webhook/', function (req, res) {
@@ -179,6 +108,9 @@ app.post('/webhook/', function (req, res) {
         }, false);
     }
     */
+
+ getPersonal(sender_id);
+
 
  function addPersistentMenu(){
  request({
