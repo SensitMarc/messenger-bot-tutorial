@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
 		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
 		method: 'POST',
 		json: {
-			recipient: {id:sender_id},
+			recipient: {id:process.env.sender_id},
 			message: {"text":"buddy"},
 		}
 	}, function(error, response, body) {
