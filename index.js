@@ -109,8 +109,7 @@ app.post('/webhook/', function (req, res) {
     }
     */
 
- getPersonal(sender_id);
-
+console.log("hello");
 
  function addPersistentMenu(){
  request({
