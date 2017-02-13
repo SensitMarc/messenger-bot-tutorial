@@ -43,7 +43,7 @@ function sendGenericMessage() {
 				}, {
 					"title": "Second card",
 					"subtitle": "Element #2 of an hscroll",
-					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.pn",
+					"video_url": "https://youtu.be/_pBQ6eD3dyI",
 					"buttons": [{
 						"type": "postback",
 						"title": "Postback",
@@ -72,21 +72,3 @@ function sendGenericMessage() {
 
 sendGenericMessage();
 
-/*
-	request({
-		url: 'https://graph.facebook.com/v2.6/me/messages',
-		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
-		method: 'POST',
-		json: {
-			recipient: {id:process.env.sender_id},
-			message: {"text":"buddy"},
-		}
-	}, function(error, response, body) {
-		if (error) {
-			console.log('Error sending messages: ', error)
-		} else if (response.body.error) {
-			console.log('Error: ', response.body.error)
-		}
-	})
-
-*/
