@@ -26,7 +26,7 @@ app.get('/', function (req, res) {
 		method: 'POST',
 		json: {
 			recipient: {id:sender_id},
-			message: ("text": "Space"},
+			message: ("text":"Space"},
 		}
 	}, function(error, response, body) {
 		if (error) {
