@@ -83,7 +83,7 @@ app.post('/webhook/', function (req, res) {
 });
 
 */
-
+/*
 function setTime(){
 var scheduler = require('node-schedule');
 var rule = new scheduler.RecurrenceRule();
@@ -94,8 +94,9 @@ var dailyJob = schedule.scheduleJob(date, function(){
 });
 scheduler.scheduleJob(rule,task);
 }
+*/
 
-
+getReal(sender_id);
 
 // to post data
 app.post('/webhook/', function (req, res) {
