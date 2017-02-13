@@ -43,7 +43,7 @@ function sendGenericMessage() {
 				}, {
 					"title": "Second card",
 					"subtitle": "Element #2 of an hscroll",
-					"video_url": "https://youtu.be/_pBQ6eD3dyI",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
 					"buttons": [{
 						"type": "postback",
 						"title": "Postback",
