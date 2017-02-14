@@ -19,6 +19,7 @@ app.use(bodyParser.json())
 app.get('/', function (req, res) {
 	res.send('hello world i am a secret booty')
 })
+/*
 
 function sendGenericMessage() {
 	let messageData = {
@@ -71,14 +72,14 @@ function sendGenericMessage() {
 }
 
 sendGenericMessage();
+*/
 
-/*
 function sendGenericMessage() {
 	let messageData = {
 		"attachment": {
 			"type": "video",
 			"payload": {
-				"url": "https://github.com/SensitMarc/messenger-bot-tutorial/blob/master/The%20best%20of%20Homer%20Simpson.mp4"
+				"url": "https://github.com/SensitMarc/messenger-bot-tutorial/blob/master/32%20Dohs%20in%2015%20Seconds.mp4"
 			}
 		}
 	}
@@ -100,4 +101,4 @@ function sendGenericMessage() {
 }
 
 sendGenericMessage();
-*/
+
