@@ -77,9 +77,9 @@ sendGenericMessage();
 function sendGenericMessage() {
 	let messageData = {
 		"attachment": {
-			"type": "video",
+			"type": "image",
 			"payload": {
-				"url": "https://www.dropbox.com/s/p8x7m9dxnyw26jc/Homer%20-%20D%C2%B4OH.mp4?dl=0"
+				"url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png"
 			}
 		}
 	}
