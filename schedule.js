@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 app.get('/', function (req, res) {
 	res.send('hello world i am a secret booty')
 })
-/*
+
 function sendGenericMessage() {
 	let messageData = {
 		"attachment": {
@@ -71,8 +71,8 @@ function sendGenericMessage() {
 }
 
 sendGenericMessage();
-*/
 
+/*
 function sendGenericMessage() {
 	let messageData = {
 		"attachment": {
@@ -100,4 +100,4 @@ function sendGenericMessage() {
 }
 
 sendGenericMessage();
-
+*/
