@@ -79,7 +79,7 @@ function sendGenericMessage() {
 		"attachment": {
 			"type": "video",
 			"payload": {
-				"url": "https://github.com/SensitMarc/messenger-bot-tutorial/blob/master/32%20Dohs%20in%2015%20Seconds.mp4"
+				"url": "https://www.dropbox.com/s/p8x7m9dxnyw26jc/Homer%20-%20D%C2%B4OH.mp4?dl=0"
 			}
 		}
 	}
