@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 app.get('/', function (req, res) {
 	res.send('hello world i am a secret booty')
 })
-
+/*
 function sendGenericMessage() {
 	let messageData = {
 		"attachment": {
@@ -71,6 +71,33 @@ function sendGenericMessage() {
 }
 
 sendGenericMessage();
+*/
 
+function sendGenericMessage() {
+	let messageData = {
+		"attachment": {
+			"type": "video",
+			"payload": {
+				"url": "https://github.com/SensitMarc/messenger-bot-tutorial/blob/master/The%20best%20of%20Homer%20Simpson.mp4"
+			}
+		}
+	}
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
+		method: 'POST',
+		json: {
+			recipient: {id:process.env.sender_id},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}
 
-messenger-bot-tutorial/The best of Homer Simpson.mp4
+sendGenericMessage();
+
