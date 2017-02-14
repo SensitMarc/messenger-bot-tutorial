@@ -79,7 +79,7 @@ function sendGenericMessage() {
 		"attachment": {
 			"type": "video",
 			"payload": {
-				"url":"https://www.dropbox.com/s/p8x7m9dxnyw26jc/doh2.mp4?dl=0"
+				"url":"https://www.dropbox.com/s/p8x7m9dxnyw26jc/doh2.mp4"
 			}
 		}
 	}
