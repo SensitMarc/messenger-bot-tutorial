@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 app.get('/', function (req, res) {
 	res.send('hello world i am a secret booty')
 })
-/*
+
 function sendGenericMessage() {
 	let messageData = {
 		"attachment": {
@@ -32,7 +32,7 @@ function sendGenericMessage() {
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
 					"buttons": [{
 						 "type": "web_url",
-                        			"url": "http://sensee.ca/prototypes/index.html",
+                        			 "url": "http://sensee.ca/prototypes/index.html",
                        				 "title": "my house",
 						 "webview_height_ratio": "compact"
 					}, {
@@ -70,8 +70,8 @@ function sendGenericMessage() {
 	})
 }
 sendGenericMessage();
-*/
 
+/*
 function sendGenericMessage() {
 	let messageData = {
 		"attachment": {
@@ -99,3 +99,4 @@ function sendGenericMessage() {
 }
 
 sendGenericMessage();
+*/
