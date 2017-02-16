@@ -388,7 +388,6 @@ const projectkey=process.env.YOUR_PROJECT_ID;
 const readkey=process.env.YOUR_READ_KEY;
 
 function sendDailyStatus(){
-	var messageData; 
 request({
 	url: 'https://api.keen.io/3.0/projects/'+ process.env.YOUR_PROJECT_ID+'/events/KWHR',
 	qs: {api_key:process.env.YOUR_READ_KEY},
@@ -398,8 +397,8 @@ request({
            
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-            messageData = {"text":maya.name};
-
+          //  messageData = {"text":maya.name};
+messageData = {"text":"yeah"};
         } else {
             console.log(error);
            sendTextMessage(sender, 'Sorry dude');
@@ -412,7 +411,7 @@ request({
 		method: 'POST',
 		json: {
 			recipient: {id:process.env.sender_id},
-			message: messageData,
+			message: messageData
 		}
 	}, function(error, response, body) {
 		if (error) {
