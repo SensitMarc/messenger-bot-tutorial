@@ -392,7 +392,7 @@ function sendDailyStatus(){
  const readkey=process.env.YOUR_READ_KEY
 var messageData;
 request({
-	url: 'https://api.keen.io/3.0/projects/'+ projectkey +'/events/KWHR',
+	url: 'https://api.keen.io/3.0/projects/563a13c896773d4a75c3bf93/events/KWHR',
 	qs: {api_key:process.env.YOUR_READ_KEY},
 	method: 'GET'
     }, function(error, response, body) {
