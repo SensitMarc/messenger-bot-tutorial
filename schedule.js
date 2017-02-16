@@ -77,9 +77,9 @@ sendGenericMessage();
 function sendGenericMessage() {
 	let messageData = {
 		"attachment": {
-			"type": "image",
+			"type": "video",
 			"payload": {
-				"url":"https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png"
+				"url":"http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
 			}
 		}
 	}
