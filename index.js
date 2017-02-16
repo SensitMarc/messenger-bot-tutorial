@@ -63,6 +63,10 @@ app.post('/webhook/', function (req, res) {
 		      getPersonal(sender)
 		      continue
 	      }
+		if (text === 'homer'){
+		      sendDailyStatus()
+		      continue
+	      }      
 		      
         sendTextMessage(sender, text.substring(0, 200))
       }
@@ -380,6 +384,44 @@ function sendGenericMessage(sender) {
 	})
 }
 
+const projectkey=process.env.YOUR_PROJECT_ID; 
+const readkey=process.env.YOUR_READ_KEY;
+
+function sendDailyStatus(){
+	var messageData; 
+request({
+	url: 'https://api.keen.io/3.0/projects/' + process.env.YOUR_PROJECT_ID + '/events/KWHR',
+	qs: {api_key:process.env.YOUR_READ_KEY},
+	method: 'GET'
+    }, function(error, response, body) {
+        var maya;
+           
+        if (! error && response.statusCode === 200) {
+            maya = JSON.parse(body);
+            messageData = {"text":maya.result};
+
+        } else {
+            console.log(error);
+           sendTextMessage(sender, 'Sorry dude');
+        }
+    });
+	
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
+		method: 'POST',
+		json: {
+			recipient: {id:process.env.sender_id},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})		
+}
 
 // spin spin sugar
 app.listen(app.get('port'), function() {
