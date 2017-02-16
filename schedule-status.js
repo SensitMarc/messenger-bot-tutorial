@@ -100,21 +100,42 @@ function sendGenericMessage() {
 
 sendGenericMessage();
 */
+const projectkey=process.env.YOUR_PROJECT_ID; 
+const readkey=process.env.YOUR_READ_KEY;
 
-
-"https://api.keen.io/3.0/projects/PROJECT_ID/events/COLLECTION_NAME?api_key=READ_KEY"
-
-
-var client = new Keen({
-  projectId: "YOUR_PROJECT_ID",
-  readKey: "YOUR_READ_KEY"
-});
-
-var url = "https://api.keen.io/3.0/projects/PROJECT_ID/events/COLLECTION_NAME";
-
-client.get(url, null, client.readKey(), function(err, res){
-  // if (err) handle the error
-  console.log(res);
-});
-
+function sendDailyStatus(){
+request({
+	url: 'https://api.keen.io/3.0/projects/' + projectkey + '/events/KWHR',
+	qs: {api_key:process.env.YOUR_READ_KEY},
+	method: 'GET'
+    }, function(error, response, body) {
+        var maya;
+            
+        if (! error && response.statusCode === 200) {
+            maya = JSON.parse(body);
+            messageDataPower = {"text":maya.result};
+      //  messageDataa = {"text": sender};    
+	//sendGetReal(sender, messageData);
+        } else {
+            console.log(error);
+           sendTextMessage(sender, 'Sorry dude');
+        }
+    });
+	
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
+		method: 'POST',
+		json: {
+			recipient: {id:process.env.sender_id},
+			message: messageDataPower,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})		
+}
 
