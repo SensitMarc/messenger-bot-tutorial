@@ -104,13 +104,14 @@ const projectkey=process.env.YOUR_PROJECT_ID;
 const readkey=process.env.YOUR_READ_KEY;
 
 function sendDailyStatus(){
+	var messageData; 
 request({
 	url: 'https://api.keen.io/3.0/projects/' + projectkey + '/events/KWHR',
 	qs: {api_key:process.env.YOUR_READ_KEY},
 	method: 'GET'
     }, function(error, response, body) {
         var maya;
-         var messageData;   
+           
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
             messageData = {"text":maya.result};
