@@ -100,3 +100,17 @@ function sendGenericMessage() {
 
 sendGenericMessage();
 */
+
+var client = new Keen({
+  projectId: "YOUR_PROJECT_ID",
+  readKey: "YOUR_READ_KEY"
+});
+
+var url = "https://api.keen.io/3.0/projects/PROJECT_ID/events/COLLECTION_NAME";
+
+client.get(url, null, client.readKey(), function(err, res){
+  // if (err) handle the error
+  console.log(res);
+});
+
+
