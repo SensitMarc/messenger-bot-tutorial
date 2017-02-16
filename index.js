@@ -411,7 +411,7 @@ messageData = {"text":"yeah"};
 		method: 'POST',
 		json: {
 			recipient: {id:process.env.sender_id},
-			message: messageData
+			message: messageData,
 		}
 	}, function(error, response, body) {
 		if (error) {
