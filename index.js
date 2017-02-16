@@ -390,7 +390,7 @@ function sendGenericMessage(sender) {
 function sendDailyStatus(){
  const projectkey=process.env.YOUR_PROJECT_ID 
  const readkey=process.env.YOUR_READ_KEY
-
+var messageData;
 request({
 	url: 'https://api.keen.io/3.0/projects/'+ projectkey +'/events/KWHR',
 	qs: {api_key:process.env.YOUR_READ_KEY},
