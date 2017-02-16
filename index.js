@@ -348,7 +348,7 @@ function sendGenericMessage(sender) {
 					}, {
 						"type": "postback",
 						"title": "Postback",
-						"payload": "Payload for first element in a generic bubble",
+						"payload": "temp",
 					}],
 				}, {
 					"title": "Second card",
