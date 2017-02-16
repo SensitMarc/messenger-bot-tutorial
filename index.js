@@ -390,7 +390,7 @@ const readkey=process.env.YOUR_READ_KEY;
 function sendDailyStatus(){
 	var messageData; 
 request({
-	url: 'https://api.keen.io/3.0/projects/' + process.env.YOUR_PROJECT_ID + '/events/KWHR',
+	url: 'https://api.keen.io/3.0/projects/'+ process.env.YOUR_PROJECT_ID+'/events/KWHR',
 	qs: {api_key:process.env.YOUR_READ_KEY},
 	method: 'GET'
     }, function(error, response, body) {
@@ -398,7 +398,7 @@ request({
            
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-            messageData = {"text":maya.result};
+            messageData = {"text":maya.name};
 
         } else {
             console.log(error);
