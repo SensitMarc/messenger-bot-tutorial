@@ -347,7 +347,7 @@ function sendGenericMessage(sender) {
 						 "webview_height_ratio": "compact"
 					}, {
 						"type": "postback",
-						"title": "Postback",
+						"title": "temperature",
 						"payload": "temp",
 					}],
 				}, {
