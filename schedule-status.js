@@ -110,12 +110,11 @@ request({
 	method: 'GET'
     }, function(error, response, body) {
         var maya;
-            
+         var messageData;   
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-            messageDataPower = {"text":maya.result};
-      //  messageDataa = {"text": sender};    
-	//sendGetReal(sender, messageData);
+            messageData = {"text":maya.result};
+
         } else {
             console.log(error);
            sendTextMessage(sender, 'Sorry dude');
@@ -128,7 +127,7 @@ request({
 		method: 'POST',
 		json: {
 			recipient: {id:process.env.sender_id},
-			message: messageDataPower,
+			message: messageData,
 		}
 	}, function(error, response, body) {
 		if (error) {
