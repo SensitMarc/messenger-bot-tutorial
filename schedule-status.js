@@ -101,6 +101,10 @@ function sendGenericMessage() {
 sendGenericMessage();
 */
 
+
+"https://api.keen.io/3.0/projects/PROJECT_ID/events/COLLECTION_NAME?api_key=READ_KEY"
+
+
 var client = new Keen({
   projectId: "YOUR_PROJECT_ID",
   readKey: "YOUR_READ_KEY"
