@@ -98,6 +98,7 @@ app.post('/webhook/', function (req, res) {
 // recommended to inject access tokens as environmental variables, e.g.
  const token = process.env.FB_PAGE_ACCESS_TOKEN_SENSEE
  const tokentwo = process.env.DEVICE_ACCESS_TOKEN
+
  //const tokenthree = process.env.sender_id
 //const token = "FB_PAGE_ACCESS_TOKEN"
 
@@ -384,12 +385,14 @@ function sendGenericMessage(sender) {
 	})
 }
 
-const projectkey=process.env.YOUR_PROJECT_ID; 
-const readkey=process.env.YOUR_READ_KEY;
+
 
 function sendDailyStatus(){
+ const projectkey=process.env.YOUR_PROJECT_ID 
+ const readkey=process.env.YOUR_READ_KEY
+
 request({
-	url: 'https://api.keen.io/3.0/projects/'+ process.env.YOUR_PROJECT_ID+'/events/KWHR',
+	url: 'https://api.keen.io/3.0/projects/'+ projectkey +'/events/KWHR',
 	qs: {api_key:process.env.YOUR_READ_KEY},
 	method: 'GET'
     }, function(error, response, body) {
@@ -397,8 +400,8 @@ request({
            
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-          //  messageData = {"text":maya.name};
-messageData = {"text":"yeah"};
+            messageData = {"text":maya.name};
+//messageData = {"text":"yeah"};
         } else {
             console.log(error);
            sendTextMessage(sender, 'Sorry dude');
