@@ -399,7 +399,7 @@ request({
         var maya;
            
         if (! error && response.statusCode === 200) {
-            maya = JSON.parse(body);
+            //maya = JSON.parse(body);
      //       messageData = {"text":maya.name};
 messageData = {"text":"yeah"};
         } else {
