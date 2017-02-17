@@ -396,12 +396,11 @@ request({
 	//qs: {api_key:process.env.YOUR_READ_KEY},
 	method: 'GET'
     }, function(error, response, body) {
-        var maya;
+        var maya3;
            
         if (! error && response.statusCode === 200) {
-            maya = JSON.parse(body);
-            messageData = {"text":maya.result};
-		//messageData = {"text":"yeah"};
+            maya3 = JSON.parse(body);
+            messageData = {"text":maya3.result};
         } else {
             console.log(error);
            sendTextMessage(sender, 'Sorry dude');
