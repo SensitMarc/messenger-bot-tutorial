@@ -400,7 +400,7 @@ request({
            
         if (! error && response.statusCode === 200) {
             maya3 = JSON.parse(body);
-            messageData = {"text":"yeah"}//maya3.result};
+            messageData = {"text":maya3.result};
         } else {
             console.log(error);
            sendTextMessage(sender, 'Sorry dude');
