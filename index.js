@@ -392,7 +392,6 @@ function sendDailyStatus(){
  const readkey=process.env.YOUR_READ_KEY
 var messageData;
 request({
-	https://api.keen.io/3.0/projects/563a13c896773d4a&event_collection=kWhr&timezone=UTC&timeframe=this_1_days&filters=%5B%5D
 	url: 'https://api.keen.io/3.0/projects/'+projectkey+'queries/count?api_key='+readkey+'&event_collection=kWhr&timezone=UTC&timeframe=this_1_days&filters=%5B%5D',
 	//qs: {api_key:process.env.YOUR_READ_KEY},
 	method: 'GET'
