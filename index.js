@@ -396,7 +396,7 @@ request({
 	//qs: {api_key:process.env.YOUR_READ_KEY},
 	method: 'GET'
     }, function(error, response, body) {
-       // var maya;
+        var maya;
            
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
