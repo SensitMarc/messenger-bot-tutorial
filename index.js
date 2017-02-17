@@ -390,7 +390,7 @@ function sendGenericMessage(sender) {
 function sendDailyStatus(){
  const projectkey=process.env.YOUR_PROJECT_ID 
  const readkey=process.env.YOUR_READ_KEY
-var messageData;
+//var messageData;
 request({
 	url: 'https://api.keen.io/3.0/projects/'+projectkey+'/queries/count?api_key='+readkey+'&event_collection=kWhr&timezone=UTC&timeframe=this_1_days&filters=%5B%5D',
 	//qs: {api_key:process.env.YOUR_READ_KEY},
@@ -400,7 +400,7 @@ request({
            
         if (! error && response.statusCode === 200) {
             maya3 = JSON.parse(body);
-            messageData = {"text":maya3.result};
+            messageData = {"text":"yeah"}//maya3.result};
         } else {
             console.log(error);
            sendTextMessage(sender, 'Sorry dude');
