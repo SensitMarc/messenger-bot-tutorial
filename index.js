@@ -399,9 +399,9 @@ request({
        // var maya;
            
         if (! error && response.statusCode === 200) {
-            //maya = JSON.parse(body);
+            maya = JSON.parse(body);
      //       messageData = {"text":maya.name};
-messageData = {"text":"yeah"};
+		//messageData = {"text":"yeah"};
         } else {
             console.log(error);
            sendTextMessage(sender, 'Sorry dude');
@@ -414,7 +414,7 @@ messageData = {"text":"yeah"};
 		method: 'POST',
 		json: {
 			recipient: {id:process.env.sender_id},
-			message: {"text":"yeah"}//messageData,
+			message: {"text":maya.name}//messageData,
 		}
 	}, function(error, response, body) {
 		if (error) {
