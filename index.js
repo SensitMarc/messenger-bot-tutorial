@@ -68,7 +68,7 @@ app.post('/webhook/', function (req, res) {
 		      continue
 	      }      
 		if (text === 'STATUS'){
-		      sendStatus()
+		      sendStatus(sender)
 		      continue
 	      }       
 		      
