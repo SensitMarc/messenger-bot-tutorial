@@ -448,6 +448,11 @@ function sendDaily(sender) {
 						"type": "postback",
 						"title": "SERVICE CALL",
 						"payload": "SERVICE CALL",
+					},
+						   {
+						"type": "postback",
+						"title": "SERVICE CALL",
+						"payload": "SERVICE CALL",
 					}],
 				}, {
 					"title": "Second card",
