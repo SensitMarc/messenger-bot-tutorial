@@ -67,6 +67,10 @@ app.post('/webhook/', function (req, res) {
 		      sendDailyStatus()
 		      continue
 	      }      
+		if (text === 'DAILY STATUS'){
+		      sendDaily()
+		      continue
+	      }       
 		      
         sendTextMessage(sender, text.substring(0, 200))
       }
@@ -349,7 +353,7 @@ function sendGenericMessage(sender) {
 						 "type": "web_url",
                         			"url": "http://sensee.ca/prototypes/index.html",
                        				 "title": "DAILY STATUS",
-						 "webview_height_ratio": "compact"
+						 "webview_height_ratio": "tall"
 					}, {
 						"type": "postback",
 						"title": "SERVICE CALL",
@@ -423,6 +427,58 @@ request({
 		}
 	})		
 }
+
+
+function sendDaily(sender) {
+	let messageData = {
+		"attachment": {
+			"type": "template",
+			"payload": {
+				"template_type": "generic",
+				"elements": [{
+					"title": "DAILY STATUS",
+					"subtitle": "get your status",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
+					"buttons": [{
+						 "type": "web_url",
+                        			"url": "http://sensee.ca/prototypes/index.html",
+                       				 "title": "DAILY STATUS",
+						 "webview_height_ratio": "tall"
+					}, {
+						"type": "postback",
+						"title": "SERVICE CALL",
+						"payload": "SERVICE CALL",
+					}],
+				}, {
+					"title": "Second card",
+					"subtitle": "Element #2 of an hscroll",
+					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.pn",
+					"buttons": [{
+						"type": "postback",
+						"title": "Postback",
+						"payload": "Payload for second element in a generic bubble",
+					}],
+				}]
+			}
+		}
+	}
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}
+
 
 // spin spin sugar
 app.listen(app.get('port'), function() {
