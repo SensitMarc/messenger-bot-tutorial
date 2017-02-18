@@ -424,7 +424,7 @@ function sendStatus(sender) {
 					{
 					"title": "SENSEE1",
 					"subtitle": "get your status",
-					"image_url": "https://github.com/SensitMarc/dashboards/gh-pages/assets/img/logo4.png",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/logo4.png",
 					"buttons": [{
 						"type": "postback",
 						"title": "TODAY",
