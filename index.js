@@ -39,7 +39,7 @@ app.post('/webhook/', function (req, res) {
     var text = event.message ? event.message.text : event.postback.payload;
     // Handle a text message from this sender
 		      
-        if (text === 'Generic') {
+        if (text === 'MAIN MENU') {
            sendGenericMessage(sender)
             continue
         }
@@ -342,18 +342,18 @@ function sendGenericMessage(sender) {
 			"payload": {
 				"template_type": "generic",
 				"elements": [{
-					"title": "First tip",
-					"subtitle": "check this out",
+					"title": "DAILY STATUS",
+					"subtitle": "get your status",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
 					"buttons": [{
 						 "type": "web_url",
                         			"url": "http://sensee.ca/prototypes/index.html",
-                       				 "title": "my house",
+                       				 "title": "DAILY STATUS",
 						 "webview_height_ratio": "compact"
 					}, {
 						"type": "postback",
-						"title": "temperature",
-						"payload": "temp",
+						"title": "SERVICE CALL",
+						"payload": "SERVICE CALL",
 					}],
 				}, {
 					"title": "Second card",
