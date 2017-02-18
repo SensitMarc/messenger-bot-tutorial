@@ -358,7 +358,7 @@ function sendGenericMessage(sender) {
 				}, {
 					"title": "REAL TIME DATA",
 					"subtitle": "get your data",
-					"image_url": "messenger-bot-tutorial/assets/house-128-blue.png",
+					"image_url": "https://github.com/SensitMarc/messenger-bot-tutorial/blob/master/assets/house-128-blue.png",
 					"buttons": [{
 						"type": "postback",
 						"title": "REAL TIME DATA",
