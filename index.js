@@ -347,13 +347,13 @@ function sendGenericMessage(sender) {
 				"template_type": "generic",
 				"elements": [
 					{
-					"title": "DAILY STATUS",
+					"title": "STATUS",
 					"subtitle": "get your status",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
 					"buttons": [{
 						"type": "postback",
-						"title": "DAILY STATUS",
-						"payload": "DAILY STATUS",
+						"title": "STATUS",
+						"payload": "STATUS",
 					}],
 				}, {
 					"title": "REAL TIME DATA",
