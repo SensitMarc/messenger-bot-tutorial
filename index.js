@@ -358,7 +358,7 @@ function sendGenericMessage(sender) {
 				}, {
 					"title": "REAL TIME DATA",
 					"subtitle": "get your data",
-					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/blob/gh-pages/assets/img/house-128-blue.png",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-blue.png",
 					"buttons": [{
 						"type": "postback",
 						"title": "REAL TIME DATA",
@@ -367,7 +367,7 @@ function sendGenericMessage(sender) {
 				}, {
 					"title": "ANALYTICS",
 					"subtitle": "get your analytics",
-					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-green.png",
 					"buttons": [{
 						"type": "postback",
 						"title": "ANALYTICS",
