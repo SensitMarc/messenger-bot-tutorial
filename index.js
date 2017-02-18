@@ -67,8 +67,8 @@ app.post('/webhook/', function (req, res) {
 		      sendDailyStatus()
 		      continue
 	      }      
-		if (text === 'DAILY STATUS'){
-		      sendDaily()
+		if (text === 'STATUS'){
+		      sendStatus()
 		      continue
 	      }       
 		      
@@ -414,7 +414,80 @@ function sendGenericMessage(sender) {
 	})
 }
 
-
+function sendStatus(sender) {
+	let messageData = {
+		"attachment": {
+			"type": "template",
+			"payload": {
+				"template_type": "generic",
+				"elements": [
+					{
+					"title": "STATUS",
+					"subtitle": "get your status",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
+					"buttons": [{
+						"type": "postback",
+						"title": "STATUS",
+						"payload": "STATUS",
+					}],
+				}, {
+					"title": "REAL TIME DATA",
+					"subtitle": "get your data",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-blue.png",
+					"buttons": [{
+						"type": "postback",
+						"title": "REAL TIME DATA",
+						"payload": "REAL TIME DATA",
+					}],
+				}, {
+					"title": "ANALYTICS",
+					"subtitle": "get your analytics",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-green.png",
+					"buttons": [{
+						"type": "postback",
+						"title": "ANALYTICS",
+						"payload": "ANALYTICS",
+					}],
+				}, {
+					"title": "MAINTENANCE",
+					"subtitle": "check your maintenance",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-carblue.png",
+					"buttons": [{
+						"type": "postback",
+						"title": "MAINTENANCE",
+						"payload": "MAINTENANCE",
+					}],
+				}, {
+					"title": "SERVICE CALL",
+					"subtitle": "make a service call",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-red.png",
+					"buttons": [{
+						"type": "postback",
+						"title": "SERVICE CALL",
+						"payload": "SERVICE CALL",
+					}],
+				}
+				
+				]
+			}
+		}
+	}
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}
 
 function sendDailyStatus(){
  const projectkey=process.env.YOUR_PROJECT_ID 
