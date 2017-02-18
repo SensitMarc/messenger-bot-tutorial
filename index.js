@@ -373,6 +373,24 @@ function sendGenericMessage(sender) {
 						"title": "ANALYTICS",
 						"payload": "ANALYTICS",
 					}],
+				}, {
+					"title": "MAINTENANCE",
+					"subtitle": "check your maintenance",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-carblue.png",
+					"buttons": [{
+						"type": "postback",
+						"title": "MAINTENANCE",
+						"payload": "MAINTENANCE",
+					}],
+				}, {
+					"title": "SERVICE CALL",
+					"subtitle": "make a service call",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-red.png",
+					"buttons": [{
+						"type": "postback",
+						"title": "SERVICE CALL",
+						"payload": "SERVICE CALL",
+					}],
 				}
 				
 				]
