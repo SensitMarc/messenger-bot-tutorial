@@ -358,7 +358,7 @@ function sendGenericMessage(sender) {
 				}, {
 					"title": "REAL TIME DATA",
 					"subtitle": "get your data",
-					"subtitle": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
 					"buttons": [{
 						"type": "postback",
 						"title": "REAL TIME DATA",
