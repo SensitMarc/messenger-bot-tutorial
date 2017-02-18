@@ -345,30 +345,37 @@ function sendGenericMessage(sender) {
 			"type": "template",
 			"payload": {
 				"template_type": "generic",
-				"elements": [{
+				"elements": [
+					{
 					"title": "DAILY STATUS",
 					"subtitle": "get your status",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
 					"buttons": [{
-						 "type": "web_url",
-                        			"url": "http://sensee.ca/prototypes/index.html",
-                       				 "title": "DAILY STATUS",
-						 "webview_height_ratio": "tall"
-					}, {
 						"type": "postback",
-						"title": "SERVICE CALL",
-						"payload": "SERVICE CALL",
+						"title": "DAILY STATUS",
+						"payload": "DAILY STATUS",
 					}],
 				}, {
-					"title": "Second card",
-					"subtitle": "Element #2 of an hscroll",
-					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.pn",
+					"title": "REAL TIME DATA",
+					"subtitle": "get your data",
+					"subtitle": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
 					"buttons": [{
 						"type": "postback",
-						"title": "Postback",
-						"payload": "Payload for second element in a generic bubble",
+						"title": "REAL TIME DATA",
+						"payload": "REAL TIME DATA",
 					}],
-				}]
+				}, {
+					"title": "ANALYTICS",
+					"subtitle": "get your analytics",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
+					"buttons": [{
+						"type": "postback",
+						"title": "ANALYTICS",
+						"payload": "ANALYTICS",
+					}],
+				}
+				
+				]
 			}
 		}
 	}
