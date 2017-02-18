@@ -127,18 +127,18 @@ console.log("hello");
         call_to_actions:[
             {
               type:'postback',
-              title:'Power status',
-              payload:'power'
+              title:'MAIN MENU',
+              payload:'MAIN MENU'
 		},
 		{
 	        type:'postback',
-              title:'Temp status',
-              payload:'temp'
+              title:'SUBSCRIPTIONS',
+              payload:'SUBSCRIPTIONS'
 		},
             {
               type:'postback',
-              title:'Maintenance',
-              payload:'maintenance'
+              title:'START OVER',
+              payload:'START OVER'
             },
             {
               type:'web_url',
