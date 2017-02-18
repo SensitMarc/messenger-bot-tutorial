@@ -437,7 +437,7 @@ function sendStatus(sender) {
 					"buttons": [{
 						"type": "postback",
 						"title": "TODAY",
-						"payload": "TODAY,
+						"payload": "TODAY",
 					}],
 				}, {
 					"title": "SENSEE3",
@@ -460,7 +460,7 @@ function sendStatus(sender) {
 				}, {
 					"title": "SENSEE5",
 					"subtitle": "make a service call",
-					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-red.png",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/logo4.png",
 					"buttons": [{
 						"type": "postback",
 						"title": "TODAY",
