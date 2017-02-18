@@ -63,7 +63,7 @@ app.post('/webhook/', function (req, res) {
 		      getPersonal(sender)
 		      continue
 	      }
-		if (text === 'homer'){
+		if (text === 'TODAY'){
 		      sendDailyStatus()
 		      continue
 	      }      
@@ -422,13 +422,13 @@ function sendStatus(sender) {
 				"template_type": "generic",
 				"elements": [
 					{
-					"title": "STATUS",
+					"title": "SENSEE1",
 					"subtitle": "get your status",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
 					"buttons": [{
 						"type": "postback",
-						"title": "STATUS",
-						"payload": "STATUS",
+						"title": "TODAY",
+						"payload": "TODAY",
 					}],
 				}, {
 					"title": "REAL TIME DATA",
