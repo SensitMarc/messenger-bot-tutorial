@@ -448,20 +448,15 @@ function sendDaily(sender) {
 						"type": "postback",
 						"title": "SERVICE CALL",
 						"payload": "SERVICE CALL",
-					},
-						   {
-						"type": "postback",
-						"title": "SERVICE CALL",
-						"payload": "SERVICE CALL",
 					}],
 				}, {
 					"title": "Second card",
 					"subtitle": "Element #2 of an hscroll",
-					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.pn",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
 					"buttons": [{
 						"type": "postback",
-						"title": "Postback",
-						"payload": "Payload for second element in a generic bubble",
+						"title": "REAL TIME STATUS",
+						"payload": "homer",
 					}],
 				}]
 			}
