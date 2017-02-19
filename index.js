@@ -299,7 +299,6 @@ function webView(sender){
         "title": "my house",
 	"webview_height_ratio": "tall"
       }
-    }
 request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
 		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
