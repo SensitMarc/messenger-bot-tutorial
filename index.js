@@ -295,21 +295,11 @@ request({
 function webView(sender){
 	let messageData = {
 "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":"What do you want to do next?",
-	"buttons": [{
-		"type": "web_url",
-        	"url": "http://sensee.ca/prototypes/index.html",
-         	"title": "my house",
-		"webview_height_ratio": "tall"
-	},
-	      {
-            "type":"postback",
-            "title":"power",
-            "payload":"power"
-          }
+        "type":"web_url",
+        "url": "http://sensee.ca/prototypes/index.html",
+        "title": "my house",
+	"webview_height_ratio": "tall"
+	}
         ]
       }
     }
