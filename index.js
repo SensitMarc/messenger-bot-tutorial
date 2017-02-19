@@ -346,6 +346,13 @@ function sendGenericMessage(sender) {
 					"title": "ANALYTICS",
 					"subtitle": "get your analytics",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-green.png",
+					"default_action": {
+              				"type": "web_url",
+              				"url": "https://peterssendreceiveapp.ngrok.io/view?item=103",
+              				"messenger_extensions": true,
+              				"webview_height_ratio": "tall",
+              				"fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+					
 					"buttons": [{
 						"type": "postback",
 						"title": "ANALYTICS",
