@@ -43,7 +43,7 @@ app.post('/webhook/', function (req, res) {
            sendGenericMessage(sender)
             continue
         }
-	      if (text === 'web') {
+	      if (text === 'ANALYTICS') {
 		webView(sender)
 		    continue 
 	      }
@@ -143,12 +143,6 @@ console.log("hello");
               type:'postback',
               title:'START OVER',
               payload:'START OVER'
-            },
-            {
-              type:'web_url',
-              title:'Analytics',
-              url:'http://sensee.ca/prototypes/index.html',
-	      webview_height_ratio: 'tall'
             }
           ]
     }
