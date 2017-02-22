@@ -347,7 +347,7 @@ function sendGenericMessage(sender) {
 						"title": "REAL TIME DATA",
 						"payload": "REAL TIME DATA",
 					}],
-				}, {
+				}, /*{
 					"title": "ANALYTICS",
 					"subtitle": "get your analytics",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-green.png",
@@ -363,7 +363,8 @@ function sendGenericMessage(sender) {
 						"title": "ANALYTICS",
 						"payload": "ANALYTICS",
 					}],
-				}, {
+				},
+					*/{
 					"title": "MAINTENANCE",
 					"subtitle": "check your maintenance",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-carblue.png",
