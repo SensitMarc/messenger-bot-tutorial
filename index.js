@@ -71,6 +71,11 @@ app.post('/webhook/', function (req, res) {
 		      sendStatus(sender)
 		      continue
 	      }       
+			if (text === 'ON'){
+		      console.log("hello");
+		      continue
+	      }          
+		      
 		      
         sendTextMessage(sender, text.substring(0, 200))
       }
