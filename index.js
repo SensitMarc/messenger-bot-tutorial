@@ -600,8 +600,8 @@ function sendDaily(sender) {
 	})
 }
 
-function sendSensee(sender, text) {
-let	messageData = { text:text}
+function sendSensee() {
+//let	messageData = { text:text}
 	
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -609,7 +609,7 @@ let	messageData = { text:text}
 		method: 'POST',
 		json: {
 			recipient: {id:process.env.sender_id},
-			message: messageData,
+			message: "ALERT",
 		}
 	}, function(error, response, body) {
 		if (error) {
