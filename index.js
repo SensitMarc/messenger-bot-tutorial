@@ -77,7 +77,8 @@ app.post('/webhook/', function (req, res) {
 		      continue
 	      }          
 		      
-	addPersistentMenu()	      
+	addGetStartedButton(sender)	      
+	addPersistentMenu(sender)	      
         sendTextMessage(sender, text.substring(0, 200))
       }
    /*
@@ -126,7 +127,36 @@ app.post('/webhook/', function (req, res) {
 
 console.log("hello");
 
- function addPersistentMenu(){
+function addGetStartedButton(sender){
+ request({
+    url: 'https://graph.facebook.com/v2.6/me/thread_settings',
+    qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
+    method: 'POST',
+    json:{
+        setting_type:'call_to_actions',
+        thread_state:'new_thread',
+        call_to_actions:[
+            {
+              type:'postback',
+              title:'MAIN MENU',
+              payload:'MAIN MENU'
+		}
+          ]
+    }
+
+}, function(error, response, body) {
+    console.log(response)
+    if (error) {
+        console.log('Error sending messages: ', error)
+    } else if (response.body.error) {
+        console.log('Error: ', response.body.error)
+    }
+})
+
+}
+
+
+ function addPersistentMenu(sender){
  request({
     url: 'https://graph.facebook.com/v2.6/me/thread_settings',
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
