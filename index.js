@@ -601,7 +601,7 @@ function sendDaily(sender) {
 }
 
 function sendSensee() {
-let	messageData = { text:"ON"}
+let	messageData = { text:text}
 	
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
