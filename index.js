@@ -71,7 +71,7 @@ app.post('/webhook/', function (req, res) {
 		      sendStatus(sender)
 		      continue
 	      }       
-			if (text === 'ON'){
+			if (text === 'test-event'){
 		      console.log("hello");
 		      continue
 	      }          
