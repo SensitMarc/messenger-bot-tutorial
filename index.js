@@ -609,7 +609,7 @@ function sendSensee() {
 		method: 'POST',
 		json: {
 			recipient: {id:process.env.sender_id},
-			text:{"ALERT"},
+			message: {'text':'ALERT'},
 		}
 	}, function(error, response, body) {
 		if (error) {
