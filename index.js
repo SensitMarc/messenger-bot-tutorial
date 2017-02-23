@@ -600,7 +600,7 @@ function sendDaily(sender) {
 	})
 }
 
-function sendSensee() {
+function sendSensee(text) {
 let	messageData = { text:text}
 	
 	request({
