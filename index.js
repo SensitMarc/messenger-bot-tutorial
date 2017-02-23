@@ -206,8 +206,8 @@ request({
         if (! error && response.statusCode === 200) {
             //name = "reset";
 		name = JSON.parse(body);
-            messageDataa = {"text":"Hi, " + name.first_name + ", how can I help you?"};
-      //  messageDataa = {"text": sender};    
+       //     messageDataa = {"text":"Hi, " + name.first_name + ", how can I help you?"};
+        messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
             console.log(error);
@@ -220,7 +220,7 @@ request({
 		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
 		method: 'POST',
 		json: {
-			recipient: {id:sender},
+			recipient: {id:process.env.sender_id},
 			message: messageDataa,
 		}
 	}, function(error, response, body) {
