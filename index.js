@@ -38,6 +38,7 @@ app.post('/webhook/', function (req, res) {
 	      if ((event.message && event.message.text) || (event.postback && event.postback.payload)) {
     var text = event.message ? event.message.text : event.postback.payload;
     // Handle a text message from this sender
+	
 		      
         if (text === 'MAIN MENU') {
            sendGenericMessage(sender)
@@ -47,10 +48,10 @@ app.post('/webhook/', function (req, res) {
 		webView(sender)
 		    continue 
 	      }
-	      if (text === 'menu') {
-		addPersistentMenu()
-		      continue
-	      }
+	     // if (text === 'menu') {
+	//	addPersistentMenu()
+	//	      continue
+	  //    }
 		if (text === 'power') {
 		getReal(sender)
 		     continue 
@@ -76,7 +77,7 @@ app.post('/webhook/', function (req, res) {
 		      continue
 	      }          
 		      
-		      
+	addPersistentMenu()	      
         sendTextMessage(sender, text.substring(0, 200))
       }
    /*
@@ -173,7 +174,7 @@ request({
             //var messageDataa;
             
         if (! error && response.statusCode === 200) {
-            name = "reset";
+            //name = "reset";
 		name = JSON.parse(body);
             messageDataa = {"text":"Hi, " + name.first_name + ", how can I help you?"};
       //  messageDataa = {"text": sender};    
