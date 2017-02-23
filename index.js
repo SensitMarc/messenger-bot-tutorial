@@ -72,8 +72,8 @@ app.post('/webhook/', function (req, res) {
 		      sendStatus(sender)
 		      continue
 	      }       
-			if (text === 'test-event'){
-		      console.log("hello");
+			if (text === 'ON'){
+		      sendSensee()
 		      continue
 	      }          
 		      	      
@@ -195,6 +195,7 @@ function addGetStartedButton(sender){
 }
 
 function getPersonal(sender){
+let messageData = {"text": sender}; 
 request({
     	url: 'https://graph.facebook.com/v2.6/' + sender,//process.env.sender_id,
 	qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
@@ -207,7 +208,7 @@ request({
             //name = "reset";
 		name = JSON.parse(body);
        //     messageDataa = {"text":"Hi, " + name.first_name + ", how can I help you?"};
-        messageDataa = {"text": sender};    
+      //  messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
             console.log(error);
@@ -221,7 +222,7 @@ request({
 		method: 'POST',
 		json: {
 			recipient: {id:process.env.sender_id},
-			message: messageDataa,
+			message: messageData,
 		}
 	}, function(error, response, body) {
 		if (error) {
@@ -599,6 +600,25 @@ function sendDaily(sender) {
 	})
 }
 
+function sendSensee() {
+let	messageData = { text:"ON"}
+	
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
+		method: 'POST',
+		json: {
+			recipient: {id:process.env.sender_id},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}
 
 // spin spin sugar
 app.listen(app.get('port'), function() {
