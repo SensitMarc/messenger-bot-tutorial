@@ -391,13 +391,14 @@ function sendGenericMessage(sender) {
 					}],
 				},
 					{
-					"title": "MAINTENANCE",
-					"subtitle": "check your maintenance",
+					"title": "CHAT",
+					"subtitle": "GROUP CHAT",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-carblue.png",
 					"buttons": [{
-						"type": "postback",
-						"title": "MAINTENANCE",
-						"payload": "MAINTENANCE",
+						"type": "web_url",
+						"url": "https://m.me/g/AbYfV_ec_V9jzVw9",
+						"title": "GROUP CHAT",
+						"webview_height_ratio": "tall",
 					}],
 				}, {
 					"title": "SERVICE CALL",
