@@ -395,10 +395,10 @@ function sendGenericMessage(sender) {
 					"subtitle": "GROUP CHAT",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-carblue.png",
 					"buttons": [{
-						"type": "web_url",
-						"url": "https://m.me/g/AbYfV_ec_V9jzVw9",
+						"type": "postback",
 						"title": "GROUP CHAT",
-						"webview_height_ratio": "tall",
+						"payload": "https://m.me/g/AbYfV_ec_V9jzVw9",
+						
 					}],
 				}, {
 					"title": "SERVICE CALL",
