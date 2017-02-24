@@ -614,7 +614,7 @@ function sendSensee() {
         "buttons":[
           {
             "type":"postback",
-            "title":"click to get diagnostics",
+            "title":"get diagnostics",
             "payload":"TODAY"
           }
         ]
