@@ -604,7 +604,23 @@ function sendSensee() {
 		method: 'POST',
 		json: {
 			recipient: {id:process.env.sender_id},
-			message: {'text':'ALERT'},
+			//message: {'text':'ALERT'},
+			message:{
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"ALERT,
+        "buttons":[
+          {
+            "type":"postback",
+            "title":"click to get diagnostics",
+            "payload":"TODAY"
+          }
+        ]
+      }
+    }
+  }
 		}
 	}, function(error, response, body) {
 		if (error) {
