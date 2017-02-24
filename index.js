@@ -379,24 +379,18 @@ function sendGenericMessage(sender) {
 						"title": "REAL TIME DATA",
 						"payload": "REAL TIME DATA",
 					}],
-				}, /*{
+				}, {
 					"title": "ANALYTICS",
 					"subtitle": "get your analytics",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-green.png",
-					"default_action": {
-              				"type": "web_url",
-              				"url": "https://peterssendreceiveapp.ngrok.io/view?item=103",
-              				"messenger_extensions": true,
-              				"webview_height_ratio": "tall",
-              				"fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-					
 					"buttons": [{
-						"type": "postback",
+              					"type": "web_url",
+              					"url": "http://sensee.ca/prototypes/index.html",
 						"title": "ANALYTICS",
-						"payload": "ANALYTICS",
+              					"webview_height_ratio": "tall",
 					}],
 				},
-					*/{
+					{
 					"title": "MAINTENANCE",
 					"subtitle": "check your maintenance",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-carblue.png",
