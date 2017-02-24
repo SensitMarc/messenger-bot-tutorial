@@ -397,7 +397,7 @@ function sendGenericMessage(sender) {
 					"buttons": [{
 						"type": "postback",
 						"title": "GROUP CHAT",
-						"payload": "https://m.me/g/AbYfV_ec_V9jzVw9",
+						"payload": "CLICK HERE FOR GROUP CHAT....https://m.me/g/AbYfV_ec_V9jzVw9",
 						
 					}],
 				}, {
