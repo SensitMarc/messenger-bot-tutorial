@@ -610,7 +610,7 @@ function sendSensee() {
       "type":"template",
       "payload":{
         "template_type":"button",
-        "text":"ALERT,
+        "text":"ALERT",
         "buttons":[
           {
             "type":"postback",
