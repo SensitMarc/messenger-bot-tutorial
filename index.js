@@ -68,7 +68,7 @@ app.post('/webhook/', function (req, res) {
 		      sendDailyStatus()
 		      continue
 	      }      
-		if (text === 'STATUS'){
+		if (text === 'DIAGNOSTICS'){
 		      sendStatus(sender)
 		      continue
 	      }       
@@ -368,7 +368,7 @@ function sendGenericMessage(sender) {
 					"buttons": [{
 						"type": "postback",
 						"title": "DIAGNOSTICS",
-						"payload": "STATUS",
+						"payload": "DIAGNOSTICS",
 					}],
 				},  {
 					"title": "ANALYTICS",
@@ -392,6 +392,16 @@ function sendGenericMessage(sender) {
 						
 					}],
 				}, {
+					"title": "ALERTS",
+					"subtitle": "troubleshoot the problem",
+					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
+					"buttons": [{
+						"type": "postback",
+						"title": "ALERTS",
+						"payload": "ALERTS",
+					}],
+				},
+					{
 					"title": "SERVICE CALL",
 					"subtitle": "make a service call",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-red.png",
