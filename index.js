@@ -362,8 +362,8 @@ function sendGenericMessage(sender) {
 				"template_type": "generic",
 				"elements": [
 					{
-					"title": "STATUS",
-					"subtitle": "get your status",
+					"title": "DIAGNOSTICS",
+					"subtitle": "troubleshoot the problem",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
 					"buttons": [{
 						"type": "postback",
