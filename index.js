@@ -177,8 +177,8 @@ function addGetStartedButton(sender){
 		},
             {
               type:'postback',
-              title:'START OVER',
-              payload:'START OVER'
+              title:'CHAT',
+              payload:'CHAT'
             }
           ]
     }
@@ -367,19 +367,10 @@ function sendGenericMessage(sender) {
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/house-128.png",
 					"buttons": [{
 						"type": "postback",
-						"title": "STATUS",
+						"title": "DIAGNOSTICS",
 						"payload": "STATUS",
 					}],
-				}, {
-					"title": "REAL TIME DATA",
-					"subtitle": "get your data",
-					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-blue.png",
-					"buttons": [{
-						"type": "postback",
-						"title": "REAL TIME DATA",
-						"payload": "REAL TIME DATA",
-					}],
-				}, {
+				},  {
 					"title": "ANALYTICS",
 					"subtitle": "get your analytics",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/house-128-green.png",
