@@ -446,46 +446,19 @@ function sendStatus(sender) {
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/logo4.png",
 					"buttons": [{
 						"type": "postback",
-						"title": "TODAY",
-						"payload": "TODAY",
+						"title": "NOW",
+						"payload": "NOW",
 					}],
 				}, {
 					"title": "SENSEE2",
-					"subtitle": "get your data",
+					"subtitle": "get your status",
 					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/logo4.png",
 					"buttons": [{
 						"type": "postback",
-						"title": "TODAY",
-						"payload": "TODAY",
+						"title": "NOW",
+						"payload": "NOW",
 					}],
-				}, {
-					"title": "SENSEE3",
-					"subtitle": "get your analytics",
-					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/logo4.png",
-					"buttons": [{
-						"type": "postback",
-						"title": "TODAY",
-						"payload": "TODAY",
-					}],
-				}, {
-					"title": "SENSEE4",
-					"subtitle": "check your maintenance",
-					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/logo4.png",
-					"buttons": [{
-						"type": "postback",
-						"title": "TODAY",
-						"payload": "TODAY",
-					}],
-				}, {
-					"title": "SENSEE5",
-					"subtitle": "make a service call",
-					"image_url": "https://raw.githubusercontent.com/SensitMarc/dashboards/gh-pages/assets/img/logo4.png",
-					"buttons": [{
-						"type": "postback",
-						"title": "TODAY",
-						"payload": "TODAY",
-					}],
-				}
+				},
 				
 				]
 			}
