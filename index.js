@@ -265,7 +265,7 @@ request({
             
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-            messageDataPower = {"text":maya.result + 'watts'};
+            messageDataPower = {"text":"watts"};
       //  messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
