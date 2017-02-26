@@ -521,7 +521,7 @@ request({
            
         if (! error && response.statusCode === 200) {
             maya3 = JSON.parse(body);
-            messageData = {"text":maya3.result + "watts"};
+            messageData = {"text":maya3.result + " watts"};
         } else {
             console.log(error);
            sendTextMessage(sender, 'Sorry dude');
