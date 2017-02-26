@@ -64,7 +64,7 @@ app.post('/webhook/', function (req, res) {
 		      getPersonal(sender)
 		      continue
 	      }
-		if (text === 'TODAY'){
+		if (text === 'NOW'){
 		      sendDailyStatus()
 		      continue
 	      }      
