@@ -52,7 +52,7 @@ app.post('/webhook/', function (req, res) {
 	//	addPersistentMenu()
 	//	      continue
 	  //    }
-		if (text === 'power') {
+		if (text === 'NOW') {
 		getReal(sender)
 		     continue 
 	      }      
@@ -64,7 +64,7 @@ app.post('/webhook/', function (req, res) {
 		      getPersonal(sender)
 		      continue
 	      }
-		if (text === 'NOW'){
+		if (text === 'TODAY'){
 		      sendDailyStatus()
 		      continue
 	      }      
@@ -265,7 +265,7 @@ request({
             
         if (! error && response.statusCode === 200) {
             maya = JSON.parse(body);
-            messageDataPower = {"text":"watts"};
+            messageDataPower = {"text":maya.result + " watts"};
       //  messageDataa = {"text": sender};    
 	//sendGetReal(sender, messageData);
         } else {
