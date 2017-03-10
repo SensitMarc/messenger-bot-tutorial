@@ -162,10 +162,11 @@ function addGetStartedButton(sender){
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
     method: 'POST',
     json:{
-        setting_type:'call_to_actions',
+        persistent_menu:[{
+	setting_type:'call_to_actions',
         thread_state:'existing_thread',
 	locale:"default",
-        composer_input_disabled:"false",
+        composer_input_disabled:"true",
         call_to_actions:[
             {
               type:'postback',
@@ -183,7 +184,9 @@ function addGetStartedButton(sender){
               payload:'CHAT'
             }
           ]
+	}]
     }
+			 
 
 }, function(error, response, body) {
     console.log(response)
