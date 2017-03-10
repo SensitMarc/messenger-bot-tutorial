@@ -168,14 +168,24 @@ json:
 		
 	setting_type:'call_to_actions',
         thread_state:'existing_thread',
-	locale:"default",
-        composer_input_disabled:"true",
+	locale:'default',
+        composer_input_disabled:'true',
         
 	call_to_actions:[
             {
               type:'postback',
               title:'MAIN MENU',
               payload:'MAIN MENU'
+		},
+		{
+	        type:'postback',
+              title:'SUBSCRIPTIONS',
+              payload:'SUBSCRIPTIONS'
+		},
+		{
+	        type:'postback',
+              title:'SUBSCRIPTIONS',
+              payload:'SUBSCRIPTIONS'
 		},
 		{
 	        type:'postback',
@@ -194,7 +204,7 @@ json:
 ]}	 
 
 }, {
-composer_input_disabled:'true'
+composer_input_disabled:'true',
  },
 	 
 function(error, response, body) {
