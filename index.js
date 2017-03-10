@@ -203,9 +203,7 @@ json:
 			 
 ]}	 
 
-}, {
-composer_input_disabled:'true',
- },
+},
 	 
 function(error, response, body) {
     console.log(response)
