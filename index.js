@@ -184,13 +184,13 @@ json:
 		},
 		{
 	        type:'postback',
-              title:'SUBSCRIPTIONS',
-              payload:'SUBSCRIPTIONS'
+              title:'SUB2',
+              payload:'SUB2'
 		},
 		{
 	        type:'postback',
-              title:'SUBSCRIPTIONS',
-              payload:'SUBSCRIPTIONS'
+              title:'SUB3',
+              payload:'SUB3'
 		},
             {
               type:'postback',
