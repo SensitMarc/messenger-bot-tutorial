@@ -164,6 +164,8 @@ function addGetStartedButton(sender){
     json:{
         setting_type:'call_to_actions',
         thread_state:'existing_thread',
+	locale:"default",
+        composer_input_disabled:"true",
         call_to_actions:[
             {
               type:'postback',
