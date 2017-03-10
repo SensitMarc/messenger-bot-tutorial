@@ -161,12 +161,17 @@ function addGetStartedButton(sender){
     url: 'https://graph.facebook.com/v2.6/me/thread_settings',
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
     method: 'POST',
-    json:{
+    
+json:
+{
+	persistent_menu:[{
+		
 	setting_type:'call_to_actions',
         thread_state:'existing_thread',
 	locale:"default",
         composer_input_disabled:"true",
-        call_to_actions:[
+        
+	call_to_actions:[
             {
               type:'postback',
               title:'MAIN MENU',
@@ -183,10 +188,16 @@ function addGetStartedButton(sender){
               payload:'CHAT'
             }
           ]
+		
     }
 			 
+]}	 
 
-}, function(error, response, body) {
+}, {
+composer_input_disabled:'true'
+ },
+	 
+function(error, response, body) {
     console.log(response)
     if (error) {
         console.log('Error sending messages: ', error)
