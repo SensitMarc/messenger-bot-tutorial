@@ -48,10 +48,10 @@ app.post('/webhook/', function (req, res) {
 		webView(sender)
 		    continue 
 	      }
-	     // if (text === 'menu') {
-	//	addPersistentMenu()
-	//	      continue
-	  //    }
+	      if (text === 'menu') {
+		addPersistentMenu()
+		      continue
+	      }
 		if (text === 'NOW') {
 		getReal(sender)
 		     continue 
