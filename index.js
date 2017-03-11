@@ -189,11 +189,6 @@ function addGetStartedButton(sender){
             },
             {
               type:'postback',
-              title:'TRADE SHOWS',
-              payload:'TRADE SHOWS'
-            },
-            {
-              type:'postback',
               title:'TRADE SHOWS2',
               payload:'TRADE SHOWS2'
             }
