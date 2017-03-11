@@ -48,10 +48,10 @@ app.post('/webhook/', function (req, res) {
 		webView(sender)
 		    continue 
 	      }
-	     // if (text === 'menu') {
-	//	addPersistentMenu()
-	//	      continue
-	  //    }
+	      if (text === 'MENU') {
+		addPersistentMenu()
+		      continue
+	      }
 		if (text === 'NOW') {
 		getReal(sender)
 		     continue 
@@ -191,6 +191,11 @@ function addGetStartedButton(sender){
               type:'postback',
               title:'TRADE SHOWS',
               payload:'TRADE SHOWS'
+            },
+            {
+              type:'postback',
+              title:'TRADE SHOWS2',
+              payload:'TRADE SHOWS2'
             }
           ]
     }
