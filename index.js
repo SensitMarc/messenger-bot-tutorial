@@ -48,7 +48,7 @@ app.post('/webhook/', function (req, res) {
 		webView(sender)
 		    continue 
 	      }
-	      if (text === 'MENU') {
+	      if (text === 'MAIN MENU') {
 		addPersistentMenu()
 		      continue
 	      }
@@ -189,8 +189,8 @@ function addGetStartedButton(sender){
             },
             {
               type:'postback',
-              title:'TRADE SHOWS2',
-              payload:'TRADE SHOWS2'
+              title:'TRADE SHOWS',
+              payload:'TRADE SHOWS'
             }
           ]
     }
