@@ -186,6 +186,11 @@ function addGetStartedButton(sender){
               type:'postback',
               title:'PRODUCTS',
               payload:'PRODUCTS'
+            },
+            {
+              type:'postback',
+              title:'TRADE SHOWS',
+              payload:'TRADE SHOWS'
             }
           ]
     }
