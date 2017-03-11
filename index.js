@@ -181,6 +181,11 @@ function addGetStartedButton(sender){
               type:'postback',
               title:'CHAT',
               payload:'CHAT'
+            },
+            {
+              type:'postback',
+              title:'PRODUCTS',
+              payload:'PRODUCTS'
             }
           ]
     }
