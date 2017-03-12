@@ -154,7 +154,7 @@ function addGetStartedButton(sender){
 })
 
 }
-
+/*
 function addPersistentMenu(sender){
  request({
     url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
@@ -210,8 +210,9 @@ function addPersistentMenu(sender){
 })
 
 }
+*/
 
-/*
+
  function addPersistentMenu(sender){
  request({
     url: 'https://graph.facebook.com/v2.6/me/thread_settings',
@@ -262,7 +263,7 @@ function addPersistentMenu(sender){
 })
 
 }
-*/
+
 function getPersonal(sender){
 let messageData = {"text": sender}; 
 request({
