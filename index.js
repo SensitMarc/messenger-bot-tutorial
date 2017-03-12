@@ -129,7 +129,7 @@ addPersistentMenu();
 
 function addGetStartedButton(sender){
  request({
-    url: 'https://graph.facebook.com/v2.6/me/thread_settings',
+    url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
     method: 'POST',
     json:{
