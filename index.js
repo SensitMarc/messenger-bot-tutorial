@@ -161,7 +161,7 @@ function addPersistentMenu(sender){
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
     method: 'POST',
     json:{
-  persistent_menu:[
+  "persistent_menu":[
     {
       "locale":"default",
       "composer_input_disabled":true,
