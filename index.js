@@ -134,7 +134,7 @@ function addGetStartedButton(sender){
     method: 'POST',
     json:{
         get_started:{
-    'payload':'GET_STARTED_PAYLOAD'
+    payload:'GET_STARTED_PAYLOAD'
     }
 
 }, function(error, response, body) {
