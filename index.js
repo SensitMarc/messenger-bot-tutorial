@@ -189,7 +189,7 @@ function addPersistentMenu(sender){
         {
           "type":"web_url",
           "title":"Latest News",
-          "url":"http://petershats.parseapp.com/hat-news",
+          "url":"http://sensee.ca/prototypes/index.html",
           "webview_height_ratio":"full"
         }
       ]
