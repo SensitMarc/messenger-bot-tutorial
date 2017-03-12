@@ -137,13 +137,7 @@ function addGetStartedButton(sender){
     'payload':'GET_STARTED_PAYLOAD'
 	}
 	 
-}, function(error, response, body) {
-    console.log(response)
-    if (error) {
-        console.log('Error sending messages: ', error)
-    } else if (response.body.error) {
-        console.log('Error: ', response.body.error)
-    }
+}
 })
 
 }
