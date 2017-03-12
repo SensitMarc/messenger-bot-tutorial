@@ -132,12 +132,12 @@ function addGetStartedButton(sender){
     url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
     method: 'POST',
-    json:{
+    json:[{
         get_started:{
-    payload:'GET_STARTED_PAYLOAD'
+    'payload':'GET_STARTED_PAYLOAD'
     }
 
-}, function(error, response, body) {
+}], function(error, response, body) {
     console.log(response)
     if (error) {
         console.log('Error sending messages: ', error)
