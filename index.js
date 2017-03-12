@@ -133,8 +133,8 @@ function addGetStartedButton(sender){
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
     method: 'POST',
     json:{
-//	get_started:{
-  //  payload:'GET_STARTED_PAYLOAD'
+	get_started:{
+    'payload':'GET_STARTED_PAYLOAD'
 	}
 	 
 }, function(error, response, body) {
