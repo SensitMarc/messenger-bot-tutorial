@@ -171,14 +171,14 @@ function addGetStartedButton(sender){
 
 }
 */
-/*
+
 function addPersistentMenu(sender){
  request({
     url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
     method: 'POST',
     json:{
-  "persistent_menu":[
+  persistent_menu:[
     {
       "locale":"default",
       "composer_input_disabled":true,
@@ -217,19 +217,12 @@ function addPersistentMenu(sender){
       "composer_input_disabled":false
     }
   ]
-}, function(error, response, body) {
-    console.log(response)
-    if (error) {
-        console.log('Error sending messages: ', error)
-    } else if (response.body.error) {
-        console.log('Error: ', response.body.error)
-    }
+}
 })
 
 }
-*/
 
-
+/*
  function addPersistentMenu(sender){
  request({
     url: 'https://graph.facebook.com/v2.6/me/thread_settings',
@@ -280,6 +273,7 @@ function addPersistentMenu(sender){
 })
 
 }
+*/
 
 function getPersonal(sender){
 let messageData = {"text": sender}; 
