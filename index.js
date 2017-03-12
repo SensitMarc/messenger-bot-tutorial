@@ -196,7 +196,7 @@ function addPersistentMenu(sender){
       ]
     },
     {
-      "locale":"zh_cn",
+      "locale":"default",
       "composer_input_disabled":false
     }
   ]
