@@ -134,11 +134,10 @@ function addGetStartedButton(sender){
     method: 'POST',
     json:{
 	get_started:{
-    'payload':'GET_STARTED_PAYLOAD'
+    'payload':'MAIN MENU'
 	}
 	 
-},
-addPersistentMenu(sender)	 
+}	 
 })
 
 }
