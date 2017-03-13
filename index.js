@@ -124,8 +124,8 @@ app.post('/webhook/', function (req, res) {
     */
 
 console.log("hello");
-//addGetStartedButton();
-//addPersistentMenu();
+addGetStartedButton(sender);
+addPersistentMenu(sender);
 
 function addGetStartedButton(sender){
  request({
