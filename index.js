@@ -180,13 +180,13 @@ function addPersistentMenu(sender){
     json:{
   persistent_menu:[
     {
-      "locale":"default",
-      "composer_input_disabled":true,
-      "call_to_actions":[
+      locale:"default",
+      composer_input_disabled:true,
+      call_to_actions:[
         {
-          "title":"My Account",
-          "type":"nested",
-          "call_to_actions":[
+          title:"My Account",
+          type:"nested",
+          call_to_actions:[
             {
               "title":"Pay Bill",
               "type":"postback",
@@ -205,16 +205,16 @@ function addPersistentMenu(sender){
           ]
         },
         {
-          "type":"web_url",
-          "title":"Latest News",
-          "url":"http://sensee.ca/prototypes/index.html",
-          "webview_height_ratio":"full"
+          type:"web_url",
+          title:"Latest News",
+          url:"http://sensee.ca/prototypes/index.html",
+          webview_height_ratio:"full"
         }
       ]
     },
     {
-      "locale":"default",
-      "composer_input_disabled":false
+      locale:"default",
+      composer_input_disabled:false
     }
   ]
 }
