@@ -40,7 +40,7 @@ app.post('/webhook/', function (req, res) {
     // Handle a text message from this sender
 	
 		      
-        if (text === 'MAIN') {
+        if (text === 'MAIN MENU') {
            sendGenericMessage(sender)
             continue
         }
@@ -48,8 +48,8 @@ app.post('/webhook/', function (req, res) {
 		webView(sender)
 		    continue 
 	      }
-	      if (text === 'MAIN MENU') {
-		addPersistentMenu(sender)
+	      if (text === 'MAIN') {
+		addPersistentMenu()
 		      continue
 	      }
 		if (text === 'NOW') {
