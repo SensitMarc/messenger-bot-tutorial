@@ -172,7 +172,7 @@ function addGetStartedButton(sender){
 }
 */
 
-function addPersistentMenu(sender){
+function addPersistentMenu(){
  request({
     url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
@@ -180,41 +180,41 @@ function addPersistentMenu(sender){
     json:{
   persistent_menu:[
     {
-      locale:'default',
-      composer_input_disabled:true,
-      call_to_actions:[
+      "locale":"default",
+      "composer_input_disabled":true,
+      "call_to_actions":[
         {
-          title:'My Account',
-          type:'nested',
-          call_to_actions:[
+          "title":"My Account",
+          "type":"nested",
+          "call_to_actions":[
             {
-              title:"Pay Bill",
-              type:"postback",
-              payload:"PAYBILL_PAYLOAD"
+              "title":"Pay Bill",
+              "type":"postback",
+              "payload":"PAYBILL_PAYLOAD"
             },
             {
-              title:"History",
-              type:"postback",
-              payload:"HISTORY_PAYLOAD"
+              "title":"History",
+              "type":"postback",
+              "payload":"HISTORY_PAYLOAD"
             },
             {
-              title:"Contact Info",
-              type:"postback",
-              payload:"CONTACT_INFO_PAYLOAD"
+              "title":"Contact Info",
+              "type":"postback",
+              "payload":"CONTACT_INFO_PAYLOAD"
             }
           ]
         },
         {
-          type:"web_url",
-          title:"Latest News",
-          url:"http://sensee.ca/prototypes/index.html",
-          webview_height_ratio:"full"
+          "type":"web_url",
+          "title":"Latest News",
+          "url":"http://petershats.parseapp.com/hat-news",
+          "webview_height_ratio":"full"
         }
       ]
     },
     {
-      locale:"default",
-      composer_input_disabled:false
+      "locale":"default",
+      "composer_input_disabled":true
     }
   ]
 }
