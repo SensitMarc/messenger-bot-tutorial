@@ -134,7 +134,7 @@ function addGetStartedButton(sender){
     method: 'POST',
     json:{
 	get_started:{
-    'payload':'MAIN MENU'
+    'payload':'MAIN'
 	}
 	 
 }	 
@@ -172,7 +172,7 @@ function addGetStartedButton(sender){
 }
 */
 
-function addPersistentMenu(){
+function addPersistentMenu(sender){
  request({
     url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
