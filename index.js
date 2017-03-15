@@ -49,7 +49,7 @@ app.post('/webhook/', function (req, res) {
 		    continue 
 	      }
 	      if (text === 'MAIN') {
-		addGetStartedButton(sender)
+		addGetStartedButton()
 		      continue
 	      }
 		if (text === 'NOW') {
@@ -78,8 +78,8 @@ app.post('/webhook/', function (req, res) {
 	      }          
 		      	      
         sendTextMessage(sender, text.substring(0, 200))
-	addGetStartedButton(sender)
-	addPersistentMenu(sender)
+	addGetStartedButton()
+	addPersistentMenu()
       }
    /*
 	    if (event.postback && event.postback.payload) {
