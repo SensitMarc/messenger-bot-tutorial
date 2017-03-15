@@ -49,8 +49,8 @@ app.post('/webhook/', function (req, res) {
 		    continue 
 	      }
 	      if (text === 'MAIN') {
-		addGetStartedButton()
-		addPersistentMenu()
+		addGetStartedButton(sender)
+		addPersistentMenu(sender)
 		      continue
 	      }
 		if (text === 'NOW') {
@@ -79,8 +79,8 @@ app.post('/webhook/', function (req, res) {
 	      }          
 		      	      
         sendTextMessage(sender, text.substring(0, 200))
-	addGetStartedButton()
-	addPersistentMenu()
+	addGetStartedButton(sender)
+	addPersistentMenu(sender)
       }
    /*
 	    if (event.postback && event.postback.payload) {
@@ -128,14 +128,14 @@ app.post('/webhook/', function (req, res) {
 
 console.log("hello");
 
-function addGetStartedButton(){
+function addGetStartedButton(sender){
  request({
     url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
     method: 'POST',
     json:{
 	get_started:{
-    'payload':'MAIN'
+    'payload':'maya2'
 	}
 	 
 }	 
@@ -173,7 +173,7 @@ function addGetStartedButton(sender){
 }
 */
 
-function addPersistentMenu(){
+function addPersistentMenu(sender){
  request({
     url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
