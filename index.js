@@ -182,19 +182,25 @@ function addPersistentMenu(sender){
       "composer_input_disabled":true,
           "call_to_actions":[
             {
-              "title":"Pay Bill",
+              "title":"MAIN MENU",
               "type":"postback",
-              "payload":"PAYBILL_PAYLOAD"
+              "payload":"MAIN MENU"
+            },
+		"call_to_actions":[
+            {
+              "title":"ANALYTICS",
+              "type":"postback",
+              "payload":"ANALYTICS"
+            }],
+            {
+              "title":"PRODUCTS",
+              "type":"postback",
+              "payload":"PRODUCTS"
             },
             {
-              "title":"History",
+              "title":"CHAT",
               "type":"postback",
-              "payload":"HISTORY_PAYLOAD"
-            },
-            {
-              "title":"Contact Info",
-              "type":"postback",
-              "payload":"CONTACT_INFO_PAYLOAD"
+              "payload":"CHAT"
             }
           ]
         }
