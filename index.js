@@ -186,12 +186,11 @@ function addPersistentMenu(sender){
               "type":"postback",
               "payload":"MAIN MENU"
             },
-		"call_to_actions":[
             {
               "title":"ANALYTICS",
               "type":"postback",
               "payload":"ANALYTICS"
-            }],
+            },
             {
               "title":"PRODUCTS",
               "type":"postback",
