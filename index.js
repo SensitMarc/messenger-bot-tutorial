@@ -180,10 +180,6 @@ function addPersistentMenu(sender){
     {
       "locale":"default",
       "composer_input_disabled":true,
-      "call_to_actions":[
-        {
-          "title":"My Account",
-          "type":"nested",
           "call_to_actions":[
             {
               "title":"Pay Bill",
@@ -201,19 +197,7 @@ function addPersistentMenu(sender){
               "payload":"CONTACT_INFO_PAYLOAD"
             }
           ]
-        },
-        {
-          "type":"web_url",
-          "title":"Latest News",
-          "url":"http://sensee.ca/prototypes/index.html",
-          "webview_height_ratio":"full"
         }
-      ]
-    },
-    {
-      "locale":"default",
-      "composer_input_disabled":true
-    }
   ]
 }
 })
