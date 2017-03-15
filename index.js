@@ -50,7 +50,6 @@ app.post('/webhook/', function (req, res) {
 	      }
 	      if (text === 'MAIN') {
 		addGetStartedButton(sender)
-		addPersistentMenu(sender)
 		      continue
 	      }
 		if (text === 'NOW') {
@@ -127,7 +126,7 @@ app.post('/webhook/', function (req, res) {
     */
 
 console.log("hello");
-
+/*
 function addGetStartedButton(sender){
  request({
     url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
@@ -142,7 +141,7 @@ function addGetStartedButton(sender){
 })
 
 }
-
+*/
 /*
 function addGetStartedButton(sender){
  request({
