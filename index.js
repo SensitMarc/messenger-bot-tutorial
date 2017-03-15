@@ -49,7 +49,7 @@ app.post('/webhook/', function (req, res) {
 		    continue 
 	      }
 	      if (text === 'MAIN') {
-		addPersistentMenu()
+		addGetStartedButton()
 		      continue
 	      }
 		if (text === 'NOW') {
