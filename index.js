@@ -125,7 +125,7 @@ app.post('/webhook/', function (req, res) {
 
 console.log("hello");
 
-function addGetStartedButton(sender){
+function addGetStartedButton(){
  request({
     url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
@@ -170,7 +170,7 @@ function addGetStartedButton(sender){
 }
 */
 
-function addPersistentMenu(sender){
+function addPersistentMenu(){
  request({
     url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
