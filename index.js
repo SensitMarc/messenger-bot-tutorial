@@ -126,7 +126,7 @@ app.post('/webhook/', function (req, res) {
     */
 
 console.log("hello");
-/*
+
 function addGetStartedButton(sender){
  request({
     url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
@@ -141,7 +141,7 @@ function addGetStartedButton(sender){
 })
 
 }
-*/
+
 /*
 function addGetStartedButton(sender){
  request({
