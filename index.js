@@ -176,14 +176,12 @@ function addPersistentMenu(sender){
     qs: {access_token:process.env.FB_PAGE_ACCESS_TOKEN_SENSEE},
     method: 'POST',
     json:{
-	    persistent_menu:[{"locale":"default",
-		   "composer_input_disabled":false,
-		   "call_to_actions":[{"title":"MAIN MENU",
-		"type":"nested",
-		"call_to_actions":[{"title":"GROUP CHAT","type":"postback","payload":"GROUP CHAT"},
-				{"title":"SUBSCRIPTIONS","type":"postback","payload":"SUBSCRIPTIONS"}]}]}]
-        }
-  ]
+	    persistent_menu:[{locale:"default",
+		   composer_input_disabled:false,
+		   call_to_actions:[{title:"MAIN MENU",
+		type:"nested",
+		call_to_actions:[{title:"GROUP CHAT",type:"postback",payload:"GROUP CHAT"},
+				{title:"SUBSCRIPTIONS",type:"postback",payload:"SUBSCRIPTIONS"}]}]}]
 }
 })
 
