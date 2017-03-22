@@ -79,13 +79,14 @@ app.post('/webhook/', function (req, res) {
 		      	      
         sendTextMessage(sender, text.substring(0, 200))
       }
-   /*
+   
 	    if (event.postback && event.postback.payload) {
         text = JSON.stringify(event.postback.payload)
-	      if (text === power){
+	      if (text === MAIN MENU){
+		      webView(sender)
         //sendTextMessage(sender, "Postback received: "+ text.substring(0, 200))
-	getReal(sender, JSON.stringify(event.postback.payload))
-	console.log(	      
+	//getReal(sender, JSON.stringify(event.postback.payload))
+	      
 	continue
 	      }
       }
