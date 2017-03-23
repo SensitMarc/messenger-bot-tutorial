@@ -40,10 +40,10 @@ app.post('/webhook/', function (req, res) {
     // Handle a text message from this sender
 	
 		      
-        if (text === 'MAIN MENU') {
-           sendGenericMessage(sender)
-            continue
-        }
+      //  if (text === 'MAIN MENU') {
+       //    sendGenericMessage(sender)
+        //    continue
+        //}
 	      if (text === 'ANALYTICS') {
 		webView(sender)
 		    continue 
@@ -83,7 +83,7 @@ app.post('/webhook/', function (req, res) {
 	    if (event.postback && event.postback.payload) {
         text = JSON.stringify(event.postback.payload)
 	      if (text === 'MAIN MENU'){
-		      webView(sender)
+		      sendGenericMessage(sender)
         //sendTextMessage(sender, "Postback received: "+ text.substring(0, 200))
 	//getReal(sender, JSON.stringify(event.postback.payload))
 	      
