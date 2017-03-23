@@ -40,10 +40,10 @@ app.post('/webhook/', function (req, res) {
     // Handle a text message from this sender
 	
 		      
-      //  if (text === 'MAIN MENU') {
-       //    sendGenericMessage(sender)
-        //    continue
-        //}
+        if (text === 'MAIN MENU') {
+           sendGenericMessage(sender)
+            continue
+        }
 	      if (text === 'ANALYTICS') {
 		webView(sender)
 		    continue 
