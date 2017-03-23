@@ -78,8 +78,8 @@ app.post('/webhook/', function (req, res) {
 	      }          
 		      	      
         sendTextMessage(sender, text.substring(0, 200))
-     // }
-   
+      }
+   /*
 	    if (event.postback && event.postback.payload) {
         text = JSON.stringify(event.postback.payload)
 	      if (text === MAIN MENU){
