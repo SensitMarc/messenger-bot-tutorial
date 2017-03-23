@@ -36,7 +36,7 @@ app.post('/webhook/', function (req, res) {
       //if (event.message && event.message.text) {
        //  text = event.message.text
 	      if ((event.message && event.message.text) || (event.postback && event.postback.payload)) {
-    var text = event.message ? event.message.text : event.postback.payload;
+    var text = (event.message ? event.message.text : event.postback.payload)
     // Handle a text message from this sender
 	
 		      
@@ -78,8 +78,8 @@ app.post('/webhook/', function (req, res) {
 	      }          
 		      	      
         sendTextMessage(sender, text.substring(0, 200))
-      
-   
+        }
+	    /*
 	    if (event.postback && event.postback.payload) {
         text = JSON.stringify(event.postback.payload)
 	      if (text === 'MAIN MENU'){
