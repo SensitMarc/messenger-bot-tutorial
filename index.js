@@ -180,7 +180,7 @@ function addPersistentMenu(sender){
 	    persistent_menu:[{locale:"default",
 		   composer_input_disabled:false,
 		   call_to_actions:[{title:"MAIN MENU",
-		type:"nested",
+		type:"nested",payload:"MAIN MENU",
 		call_to_actions:[{title:"GROUP CHAT",type:"postback",payload:"GROUP CHAT"},
 				{title:"SUBSCRIPTIONS",type:"postback",payload:"SUBSCRIPTIONS"}]}]}]
 }
