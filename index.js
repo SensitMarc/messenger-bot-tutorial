@@ -77,7 +77,7 @@ app.post('/webhook/', function (req, res) {
 		      continue
 	      }          
 		      	      
-        sendTextMessage(sender, text.substring(0, 200))
+       // sendTextMessage(sender, text.substring(0, 200))
         }
 	    /*
 	    if (event.postback && event.postback.payload) {
