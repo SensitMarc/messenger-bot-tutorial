@@ -77,16 +77,15 @@ app.post('/webhook/', function (req, res) {
 		      continue
 	      }          
 		      	      
-       // sendTextMessage(sender, text.substring(0, 200))
-        }
-	    /*
+        sendTextMessage(sender, text.substring(0, 200))
+        //}
+	    
 	    if (event.postback && event.postback.payload) {
         text = JSON.stringify(event.postback.payload)
 	      if (text === 'MAIN MENU'){
 		      sendGenericMessage(sender)
         //sendTextMessage(sender, "Postback received: "+ text.substring(0, 200))
 	//getReal(sender, JSON.stringify(event.postback.payload))
-	      
 	continue
 	      }
       }
