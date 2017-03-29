@@ -36,8 +36,8 @@ app.post('/webhook/', function (req, res) {
       //if (event.message && event.message.text) {
        //  text = event.message.text
 	      if ((event.message && event.message.text) || (event.postback && event.postback.payload)) {
- //   var text = (event.message ? event.message.text : event.postback.payload)
-   var text = JSON.stringify(event.postback.payload)
+   var text = (event.message ? event.message.text : event.postback.payload)
+  // var text = JSON.stringify(event.postback.payload)
     // Handle a text message from this sender
 	
 		      
@@ -170,7 +170,7 @@ function addGetStartedButton(sender){
 
 }
 */
-
+/*
 function addPersistentMenu(sender){
  request({
     url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
@@ -187,9 +187,9 @@ function addPersistentMenu(sender){
 })
 
 }
+*/
 
 
-/*
  function addPersistentMenu(sender){
  request({
     url: 'https://graph.facebook.com/v2.6/me/thread_settings',
@@ -240,7 +240,7 @@ function addPersistentMenu(sender){
 })
 
 }
-*/
+
 
 function getPersonal(sender){
 let messageData = {"text": sender}; 
