@@ -54,7 +54,7 @@ app.post('/webhook/', function (req, res) {
 		      continue
 	      }
 		if (text === 'NOW') {
-		getReal(sender)
+		addPersistentMenu(sender)
 		     continue 
 	      }      
 	      if (text === 'temp'){
