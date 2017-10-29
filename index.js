@@ -61,7 +61,7 @@ app.post('/webhook/', function (req, res) {
 		      getTemperature(sender)
 		      continue
 	      }
-    		if (text === 'hey'){
+    		if (text === 'summerof69'){
 		      getPersonal(sender)
 		      continue
 	      }
